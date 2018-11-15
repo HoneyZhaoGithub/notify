@@ -2738,10 +2738,4 @@ BSD：较为宽松的协议，包含两个变种BSD 2-Clause 和BSD 3-Clause，�
 
 ### 联系我
 
-- WebSite:[http://rannn.cc][1]
-- Mail: xmusaber@163.com
-
-作者 [Rannn Tao][2]   
-
-[1]: http://rannn.cc
-[2]: http://github.com/lemonjing
+- Mail: hekuangsheng@163.com
