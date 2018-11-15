@@ -44,7 +44,7 @@
  - Github：https://github.com/singgel
 
  - 期望职位：Java高级程序员，架构师
- - 期望薪资：税前月薪22k~30k
+ - 期望薪资：税前月薪25k~30k
 
 ---
 
