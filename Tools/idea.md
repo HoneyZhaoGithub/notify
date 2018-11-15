@@ -60,5 +60,5 @@ ctrl + f2 停止
 
 ### 联系我
 
-- 邮箱: xmusaber@163.com
-- QQ: 932191671
+- 邮箱: hekuangsheng@163.com
+- QQ: 707094900
