@@ -10,15 +10,14 @@
  - 技术博客：https://blog.csdn.net/singgel
  - Github：http://github.com/singgel
  - 期望职位：Java工程师，后端工程师
- - 期望城市：北京
 
 ### 工作经历
 #### 易车网（2018.05 ~ 今）
-##### 易车App和汽车报价大全App多端信息流推荐（2018.10 ~ 今）
+##### 易车网智能推荐系统（2018.10 ~ 今）
 **项目描述:**  
 该项目主要是XXXX。  
 **实现技术:**  
-SpringMVC + RabbitMQ + MyBatis + Dubbo + Redis + MySQL + ElasticSearch  
+SpringBoot + Kafka + MyBatis + Dubbo/Thrift + Redis + MySQL + Zookeeper + HBase  
 **职责描述:**  
 1. 作为三位核心开发之一，不仅负责开发工作，同时负责项目管理，需求整理和项目推进。(体现你的作用)
 2. 牵头构建Docker系统并完成整个项目的微服务架构。(能力的开拓精神)
@@ -26,11 +25,11 @@ SpringMVC + RabbitMQ + MyBatis + Dubbo + Redis + MySQL + ElasticSearch
 4. 独立负责XX系统和XX系统的调研和开发工作，使得XX部门业绩上升10个点。(能力)
 5. 负责安排和指导实习生工作，使其高效地产出和自我成长。(培养新人和带团队)
 
-##### 易车BI和易车Index指数后台业务系统重构（2018.05 ~ 2018.10）
+##### [易车BI后端系统重构](http://index.bitauto.com)（2018.05 ~ 2018.10）
 **项目描述:**  
 该项目主要是XXXX。  
 **实现技术:**  
-SpringMVC + RabbitMQ + MyBatis + Dubbo + Redis + MySQL + ElasticSearch  
+SpringCloud + MyBatis + Maven + Redis + MongoDB + MySQL + ElasticSearch  
 **职责描述:**  
 1. 作为三位核心开发之一，不仅负责开发工作，同时负责项目管理，需求整理和项目推进。(体现你的作用)
 2. 牵头构建Docker系统并完成整个项目的微服务架构。(能力的开拓精神)
@@ -39,11 +38,11 @@ SpringMVC + RabbitMQ + MyBatis + Dubbo + Redis + MySQL + ElasticSearch
 5. 负责安排和指导实习生工作，使其高效地产出和自我成长。(培养新人和带团队)
 
 #### 中国汽车技术研究中心（2015.06 ~ 2018.04）
-##### 物联网监控平台-智能汽车示范运营管理平台（2017.06 ~ 2018.04）
+##### 智能汽车示范运营管理平台（2017.06 ~ 2018.04）
 **项目描述:**  
 该项目主要是XXX，该项目为40+人的团队，该项目时已经运行6年。 (体现规模，同时也提现自己大环境的经历)   
 **实现技术:**  
-JAVA + AngularJS + MQ + Redis  
+SpringBoot + Netty + Mybatis + Maven + Kafka + Redis + Mysql + Nginx
 **职责描述:**  
 1. 作为三位核心开发之一，不仅负责开发工作，同时负责项目管理，需求整理和项目推进。(体现你的作用)
 2. 牵头构建Docker系统并完成整个项目的微服务架构。(能力的开拓精神)
@@ -51,11 +50,23 @@ JAVA + AngularJS + MQ + Redis
 4. 独立负责XX系统和XX系统的调研和开发工作，使得XX部门业绩上升10个点。(能力)
 5. 负责安排和指导实习生工作，使其高效地产出和自我成长。(培养新人和带团队)
 
-##### 云平台搭建-中国汽车材料数据系统CAMDS（2015.06 ~ 2017.06）
+##### 汽车燃料消耗量数据管理平台（2015.06 ~ 2016.10）
 **项目描述:**  
 该项目主要是XXX，该项目为40+人的团队，该项目时已经运行6年。 (体现规模，同时也提现自己大环境的经历)   
 **实现技术:**  
-JAVA + AngularJS + MQ + Redis  
+Spring + SpringMVC + Mybatis + Oracle + Tomcat  
+**职责描述:**  
+1. 作为三位核心开发之一，不仅负责开发工作，同时负责项目管理，需求整理和项目推进。(体现你的作用)
+2. 牵头构建Docker系统并完成整个项目的微服务架构。(能力的开拓精神)
+3. 重构缓存模块，加入XX功能，使得 `QPS` 提高近1倍。(能力)
+4. 独立负责XX系统和XX系统的调研和开发工作，使得XX部门业绩上升10个点。(能力)
+5. 负责安排和指导实习生工作，使其高效地产出和自我成长。(培养新人和带团队)
+
+##### [中国汽车材料数据系统](http://www.camds.org/)（2015.06 ~ 2016.10）
+**项目描述:**  
+该项目主要是XXX，该项目为40+人的团队，该项目时已经运行6年。 (体现规模，同时也提现自己大环境的经历)   
+**实现技术:**  
+Spring + Struts + Hibernate + EasyUI + Oracle + Tomcat  
 **职责描述:**  
 1. 作为三位核心开发之一，不仅负责开发工作，同时负责项目管理，需求整理和项目推进。(体现你的作用)
 2. 牵头构建Docker系统并完成整个项目的微服务架构。(能力的开拓精神)
@@ -64,7 +75,7 @@ JAVA + AngularJS + MQ + Redis
 5. 负责安排和指导实习生工作，使其高效地产出和自我成长。(培养新人和带团队)
 
 ### 技能清单
-- 编程语言：Java/.NET/Python
+- 编程语言：Java/Python
 - Web框架：Spring/SpringMVC/SpringCloud/MyBatis/RPC
 - 中间件：Kafka/RabbitMQ/Zookeeper/Netty
 - 前端框架：Bootstrap/JQuery/HTML5
