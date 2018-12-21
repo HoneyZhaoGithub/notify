@@ -16,20 +16,22 @@
 ##### [易车智能推荐系统](http://app.yiche.com)（2018.10 ~ 今）
 **项目描述:**  
 该项目主要是易车网和汽车报价大全两个推荐系统多端的整合，打通易车内部数据通道。
+
 **实现技术:**  
-SpringBoot + Kafka + MyBatis + Dubbo/Thrift + Redis + MySQL + Zookeeper + HBase  
+SpringBoot + Kafka + MyBatis + Dubbo/Thrift + Redis + MySQL + Zookeeper + HBase
+
 **职责描述:**  
-1. 对接其他部门，推动系统代码迁移和业务交接。
-2. 搭建易车推荐系统2.0工程系统框架，拆分耦合代码。
+主要是用技术解读旧系统，推动PM和QA项目推进，使用SpringCloud的微服务架构重构原来的代码，将数据层由ETL拆分开。
 
 ##### [易车BI系统重构](http://index.bitauto.com)（2018.05 ~ 2018.10）
 **项目描述:**  
 该项目主要是易车网内部的BI系统，高层进行决策分析，对外公开有易车指数。
+
 **实现技术:**  
-SpringCloud + MyBatis + Maven + Redis + MongoDB + MySQL + ElasticSearch  
+SpringCloud + MyBatis + Maven + MySQL + MongoDB + ElasticSearch
+
 **职责描述:**  
-1. 重构易车BI1.0版本。
-2. 进行hive到ES数据的ETL工作。
+主要是重构易车BI，。
 
 #### 中国汽车技术研究中心（2015.06 ~ 2018.04）
 ##### 智能汽车示范运营管理平台（2017.06 ~ 2018.04）
@@ -46,15 +48,13 @@ SpringCloud + MyBatis + Maven + Redis + MongoDB + MySQL + ElasticSearch
 7. 前后端分离式的部署使用 nginx 反向代理和负载均衡，使用 baidu 地图
 
 **职责描述:**  
-主要是解决车辆数据的实时性的高并发接收和数据解析处理问题，峰值期数据过大，达 到每秒钟上千次频率的十几种协议数据的接收处理，负责系统架构拆分服务之间的通信 (暂用消息队列，正在使用 dubbo 重构)。
+主要是使用dubbo系统架构拆分业务系统和车辆系统，采用netty解决车辆数据的实时性的高并发接收和数据解析处理问题，和模式通信提升 `QPS` 120%。
 
 ##### 汽车燃料消耗量数据管理平台（2015.06 ~ 2016.10）
 **项目描述:**  
 该项目主要是车辆基础信息库和燃料消耗量信息库，系统业务流程简单但数据量大。
 
 **实现技术:**  
-责任描述:系统框架搭建，数据库设计，性能优化
-项目简介:
 1. 采用的业界领先的 VS 控件集 DevExpress 用于前台界面的交互和优化 对于旧系统的升级，
 2. 采用.netframework3.5 之后的 LINQ 对大部分的数据处理逻辑进行 转化，性能和时间提升不少
 3. 对接企业的生产线，采用的 socket 网络编程，TCP/IP 协议下的数据通信 
