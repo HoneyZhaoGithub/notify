@@ -77,8 +77,8 @@ SpringCloud + MyBatis + Maven + Redis + MongoDB + MySQL + ElasticSearch
 主要编写系统的poi模块，解决多种格式和兼容问题，减少了运维同学的sql统计工作，攻克权限树、目录树加载缓慢，加入Redis缓存功能，降低 `RT` 80%。
 
 ### 自我评价
-- 有事业心与责任心，工作积极认真，新项目上手很快。
-- 对新事物有很强的好奇心，喜欢做有挑战的事情。
-- 为人踏实，善于沟通，具有很强的团队意识和协作能力。
+- https://blog.csdn.net/singgel  
+- http://github.com/singgel
+
 ### 致谢
 感谢您花时间阅读我的简历，期待能有机会和您共事。
