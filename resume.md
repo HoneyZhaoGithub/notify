@@ -19,11 +19,11 @@
 
 **实现技术:**  
 1. 数据源模块由SqlServer + Oracle + MySQL + HTTPUrl组成
-2. Kafka 连接埋点数据落地至 HBase 供后续计算
-3. ik 进行文章分词落地至 MySQL
+2. Kafka 连接埋点数据落地至 HBase 供后续hadoop做离线计算，rabbitMQ 解耦人工规则
+3. ik 分词抽象物料特征落地至 MySQL
 4. 算法计算结果缓存至3个不同的 Redis 集群，提升响应速率
-5. 开放 restful 和 rpc 两套出口
-6. SpringCloud 全家桶框架重构
+5. SpringCloud eureka、feign、zuul、hystrix全家桶框架重构
+6. 算法和离线计算部分。。。
 
 **职责描述:**  
 主要是使用微服务架构重构原来由各种业务库和shell脚本耦合的代码，将数据层由ETL拆分开、算法黑盒化、rule规则统一至API出口。
