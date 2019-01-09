@@ -18,15 +18,15 @@
 该项目主要是易车APP、易车PCWEB、易车WAP、易车小程序、易车咨询多端推荐的整合，业务线多历史代码耦合高。
 
 **实现技术:**  
-1. 数据源模块由SqlServer + Oracle + MySQL + HTTPUrl组成
-2. Kafka 连接埋点数据落地至 HBase 供后续hadoop做离线计算，rabbitMQ 解耦人工规则
-3. ik 分词抽象物料特征落地至 MySQL
-4. 算法计算结果缓存至3个不同的 Redis 集群，提升响应速率
+1. canal 和 kafka-connector 中间件处理实时数据增量
+2. sqoop 实现 hadoop 和 RDBMS 数据之间离线数据同步
+3. ElasticSearch 优化分词与词频统计
+4. 使用 Redis 特性优化服务取值和冗余
 5. SpringCloud eureka、feign、zuul、hystrix全家桶框架重构
-6. 算法和离线计算部分。。。
+6. 算法和离线计算部分服务黑盒化
 
 **职责描述:**  
-主要是使用微服务架构重构原来由各种业务库和shell脚本耦合的代码，将数据层通过canal和confluent同步实时数据，sqoop同步离线数据进行ETL拆分开、算法黑盒化、rule规则统一至一个服务。
+主要是使用微服务架构重构原来由各种业务库和shell脚本耦合的代码，将数据层通过canal和confluent同步实时数据，推荐效果的实时性由原来的6h提升为`<10s`，采用ES的倒排索引处理物料，优化算法时间。
 
 ##### [易车BI系统重构](http://index.bitauto.com)（2018.05 ~ 2018.10）
 **项目描述:**  
@@ -36,11 +36,11 @@
 1. 使用 ElasticSearch 作为数据仓库使用，进行快速检索
 2. MongoDB存储数仓与ES之间的纬度和指标关系，以及ES的query模板
 3. eureka+ribbon+feign 做服务注册、均衡、发现
-4. lua + redis 来进行限流处理，nginx做二级服务代理
+4. lua + redis 来进行限流处理，Nginx做二级服务代理
 5. mysql 做业务数据库
 
 **职责描述:**  
-主要是重构易车BI系统的权限模块，将权限的多表行级关系转为tree树形关系，由此提升了BI的图表逻辑加载速度，去除MongoDB的数据中间层直接走ES，简化业务逻辑。
+主要是重构易车BI系统的权限模块，将权限的多表行级关系转为tree树形关系，由此提升了BI的图表逻辑加载速度，去除MongoDB的数据中间层直接走ES，简化业务逻辑减小log量优化磁盘空间。
 
 #### 中国汽车技术研究中心（2015.06 ~ 2018.04）
 ##### 智能汽车示范运营管理平台（2017.05 ~ 2018.04）
@@ -48,13 +48,12 @@
 该项目主要是物联网IOC相关项目，大部分数据采集需要与硬件终端通信，跨语言，多平台。
 
 **实现技术:**  
-1. 使用 git 对源代码进行管理
-2. 采用 oracle 关系型数据库和 redis 非关系型数据库
-3. druid 数据库连接池进行 sql 监控诊断和优化
-4. SpringBoot+Maven+MyBatis 后台 web 框架，shiro 权限管理
-5. netty 后台通讯框架与车辆 T-BOX 硬件通讯使用 kafka 解决高并发的问题 
-6. swagger 进行来进行 RESTful API 整理
-7. 前后端分离式的部署使用 nginx 反向代理和负载均衡，使用 baidu 地图
+1. 采用 oracle 关系型数据库和 redis 非关系型数据库
+2. druid 数据库连接池进行 sql 监控诊断和优化
+3. SpringBoot+Maven+MyBatis 后台 web 框架，shiro 权限管理
+4. netty 后台通讯框架与车辆 T-BOX 硬件通讯使用 kafka 解决高并发的问题 
+5. swagger 进行来进行 RESTful API 整理
+6. 前后端分离式的部署使用 nginx 反向代理和负载均衡，使用 baidu 地图
 
 **职责难点:**  
 主要是使用dubbo系统架构拆分业务系统和车辆系统，采用netty通信框架解决车辆数据的实时性的高并发接收和数据解析处理问题，提升 `QPS` 120%。
