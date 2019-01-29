@@ -24,7 +24,7 @@
 4. 使用 Redis 特性优化服务取值和冗余
 5. SpringCloud 全家桶框架重构
 6. zookeeper 做 thrift 注册中心
-7. Nginx、LVS 做网络拓扑
+7. Nginx、LVS 做路由拓扑
 
 **职责描述:**  
 主要是使用微服务架构重构原来由各种业务库和shell脚本耦合的代码，将数据层通过canal和confluent同步实时数据，推荐效果的实时性由原来的6h提升为`<10s`，DAU和月留存增加。
