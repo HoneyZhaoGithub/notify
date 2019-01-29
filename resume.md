@@ -23,7 +23,7 @@
 3. ES Lucene 分词与词频统计实现倒排索引
 4. 使用 Redis 特性优化服务取值和冗余
 5. SpringCloud 全家桶框架重构
-6. Python 算法和离线计算部分服务黑盒化，thrift 解耦合
+6. zookeeper 做 thrift 注册中心
 7. Nginx、LVS 做网络拓扑，openresty 做 ABTest
 
 **职责描述:**  
