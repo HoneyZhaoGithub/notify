@@ -7,8 +7,8 @@
  - 贺矿省/男/1992 
  - 本科/天津工业大学/软件工程 2012-2016
  - 工作年限：3年
- - 技术博客：[https://blog.csdn.net/singgel]https://blog.csdn.net/singgel
- - Github：[http://github.com/singgel]http://github.com/singgel
+ - 技术博客：[https://blog.csdn.net/singgel](https://blog.csdn.net/singgel)
+ - Github：[http://github.com/singgel](http://github.com/singgel)
  - 期望职位：后端研发工程师
 
 ### 工作经历
