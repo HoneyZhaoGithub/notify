@@ -9,7 +9,7 @@
  - 工作年限：3年
  - 技术博客：https://blog.csdn.net/singgel
  - Github：http://github.com/singgel
- - 期望职位：Java工程师，后端工程师
+ - 期望职位：后端研发工程师
 
 ### 工作经历
 #### 易车网（2018.05 ~ 今）
