@@ -18,12 +18,13 @@
 该项目主要是易车APP、易车PCWEB、易车WAP、易车小程序、易车咨询多端推荐的整合，业务线多历史代码耦合高。
 
 **实现技术:**  
-1. canal 和 kafka-connector 中间件处理实时数据增量
+1. canal、confluent、flume 和 kafka 中间件处理实时数据增量
 2. sqoop 实现 hadoop 和 RDBMS 数据之间离线数据同步
 3. ElasticSearch 优化分词与词频统计
 4. 使用 Redis 特性优化服务取值和冗余
-5. SpringCloud eureka、feign、zuul、hystrix全家桶框架重构
-6. 算法和离线计算部分服务黑盒化
+5. SpringCloud 全家桶框架重构
+6. Python 算法和离线计算部分服务黑盒化，thrift 解耦合
+7. Nginx、LVS 做网络拓扑，openresty 做 ABTest
 
 **职责描述:**  
 主要是使用微服务架构重构原来由各种业务库和shell脚本耦合的代码，将数据层通过canal和confluent同步实时数据，推荐效果的实时性由原来的6h提升为`<10s`，采用ES的倒排索引处理物料，优化算法时间。
