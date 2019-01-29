@@ -37,7 +37,7 @@
 1. 使用 ElasticSearch 作为数据仓库使用，进行快速检索
 2. MongoDB存储数仓与ES之间的纬度和指标关系，以及ES的query模板
 3. eureka+ribbon+feign 做服务注册、均衡、发现
-4. lua + redis 来进行限流处理，Nginx做二级服务代理
+4. Nginx + lua 来进行限流处理
 5. mysql 做业务数据库
 
 **职责描述:**  
