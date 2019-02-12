@@ -9,6 +9,7 @@
  - 工作年限：3年
  - 技术博客：[https://blog.csdn.net/singgel](https://blog.csdn.net/singgel)
  - Github：[http://github.com/singgel](http://github.com/singgel)
+ - Stack Overflow: [https://stackoverflow.com/users/10727010/singgel](https://stackoverflow.com/users/10727010/singgel)
  - 期望职位：后端研发工程师
 
 ### 工作经历
