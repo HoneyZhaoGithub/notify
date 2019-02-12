@@ -1,15 +1,3 @@
-# 我的网络社交名字
-# 微博：阿拉斯加大闸蟹
-# 微信：阿拉斯加大闸蟹
-# Facebook： singgel
-# Twitter：singgel
-# 生活很平淡，内心很冷静，又特别爱玩，长相的话...你们来找我好了
-
-## 相关
-
-- [CSDN](https://blog.csdn.net/singgel/)
-
----
 # 内推
 -中国汽车技术研究中心
  * hekuangsheng@163.com
