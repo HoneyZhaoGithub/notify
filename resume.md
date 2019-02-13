@@ -20,11 +20,10 @@
 **实现技术:**  
 1. canal、confluent、flume 和 kafka 中间件处理实时数据增量
 2. Sqoop 实现 Hive 与 MySQL、SqlServer 数据之间离线数据同步
-3. ES Lucene 分词与词频统计实现倒排索引
-4. Redis 存储人物和物料计算信息增加计算速度
-5. SpringCloud 全家桶框架重构
-6. thrift 做跨语言RPC接口通信
-7. Nginx、LVS 做路由拓扑
+3. Redis 存储人物和物料计算信息增加计算速度
+4. SpringCloud 全家桶框架重构
+5. thrift 做跨语言RPC接口通信
+6. Nginx、LVS 做路由拓扑和流量分发
 
 **职责描述:**  
 主要是使用微服务架构重构原来由各种业务库和shell脚本耦合的代码，将数据层通过canal和confluent同步实时数据，推荐效果的实时性由原来的6h提升为`<10s`，DAU和月留存增加。
