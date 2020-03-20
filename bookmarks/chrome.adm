@@ -1,0 +1,3335 @@
+CLASS MACHINE
+  CATEGORY !!google
+    CATEGORY !!googlechrome
+      KEYNAME "Software\Policies\Google\Chrome"
+
+      CATEGORY !!HTTPAuthentication_Category
+        POLICY !!AuthSchemes_Policy
+          #if version >= 4
+            SUPPORTED !!SUPPORTED_WINXPSP2
+          #endif
+          EXPLAIN !!AuthSchemes_Explain
+
+          PART !!AuthSchemes_Part  EDITTEXT
+            VALUENAME "AuthSchemes"
+          END PART
+        END POLICY
+
+        POLICY !!DisableAuthNegotiateCnameLookup_Policy
+          #if version >= 4
+            SUPPORTED !!SUPPORTED_WINXPSP2
+          #endif
+          EXPLAIN !!DisableAuthNegotiateCnameLookup_Explain
+          VALUENAME "DisableAuthNegotiateCnameLookup"
+          VALUEON NUMERIC 1
+          VALUEOFF NUMERIC 0
+        END POLICY
+
+        POLICY !!EnableAuthNegotiatePort_Policy
+          #if version >= 4
+            SUPPORTED !!SUPPORTED_WINXPSP2
+          #endif
+          EXPLAIN !!EnableAuthNegotiatePort_Explain
+          VALUENAME "EnableAuthNegotiatePort"
+          VALUEON NUMERIC 1
+          VALUEOFF NUMERIC 0
+        END POLICY
+
+        POLICY !!AuthServerWhitelist_Policy
+          #if version >= 4
+            SUPPORTED !!SUPPORTED_WINXPSP2
+          #endif
+          EXPLAIN !!AuthServerWhitelist_Explain
+
+          PART !!AuthServerWhitelist_Part  EDITTEXT
+            VALUENAME "AuthServerWhitelist"
+          END PART
+        END POLICY
+
+        POLICY !!AuthNegotiateDelegateWhitelist_Policy
+          #if version >= 4
+            SUPPORTED !!SUPPORTED_WINXPSP2
+          #endif
+          EXPLAIN !!AuthNegotiateDelegateWhitelist_Explain
+
+          PART !!AuthNegotiateDelegateWhitelist_Part  EDITTEXT
+            VALUENAME "AuthNegotiateDelegateWhitelist"
+          END PART
+        END POLICY
+
+        POLICY !!AllowCrossOriginAuthPrompt_Policy
+          #if version >= 4
+            SUPPORTED !!SUPPORTED_WINXPSP2
+          #endif
+          EXPLAIN !!AllowCrossOriginAuthPrompt_Explain
+          VALUENAME "AllowCrossOriginAuthPrompt"
+          VALUEON NUMERIC 1
+          VALUEOFF NUMERIC 0
+        END POLICY
+
+      END CATEGORY
+
+      CATEGORY !!Homepage_Category
+        POLICY !!HomepageLocation_Policy
+          #if version >= 4
+            SUPPORTED !!SUPPORTED_WINXPSP2
+          #endif
+          EXPLAIN !!HomepageLocation_Explain
+
+          PART !!HomepageLocation_Part  EDITTEXT
+            VALUENAME "HomepageLocation"
+          END PART
+        END POLICY
+
+        POLICY !!HomepageIsNewTabPage_Policy
+          #if version >= 4
+            SUPPORTED !!SUPPORTED_WINXPSP2
+          #endif
+          EXPLAIN !!HomepageIsNewTabPage_Explain
+          VALUENAME "HomepageIsNewTabPage"
+          VALUEON NUMERIC 1
+          VALUEOFF NUMERIC 0
+        END POLICY
+
+      END CATEGORY
+
+      CATEGORY !!Proxy_Category
+        POLICY !!ProxyMode_Policy
+          #if version >= 4
+            SUPPORTED !!SUPPORTED_WINXPSP2
+          #endif
+          EXPLAIN !!ProxyMode_Explain
+
+          PART !!ProxyMode_Part  DROPDOWNLIST
+            VALUENAME "ProxyMode"
+            ITEMLIST
+              NAME !!ProxyDisabled_DropDown VALUE "direct"
+              NAME !!ProxyAutoDetect_DropDown VALUE "auto_detect"
+              NAME !!ProxyPacScript_DropDown VALUE "pac_script"
+              NAME !!ProxyFixedServers_DropDown VALUE "fixed_servers"
+              NAME !!ProxyUseSystem_DropDown VALUE "system"
+            END ITEMLIST
+          END PART
+        END POLICY
+
+        POLICY !!ProxyServer_Policy
+          #if version >= 4
+            SUPPORTED !!SUPPORTED_WINXPSP2
+          #endif
+          EXPLAIN !!ProxyServer_Explain
+
+          PART !!ProxyServer_Part  EDITTEXT
+            VALUENAME "ProxyServer"
+          END PART
+        END POLICY
+
+        POLICY !!ProxyPacUrl_Policy
+          #if version >= 4
+            SUPPORTED !!SUPPORTED_WINXPSP2
+          #endif
+          EXPLAIN !!ProxyPacUrl_Explain
+
+          PART !!ProxyPacUrl_Part  EDITTEXT
+            VALUENAME "ProxyPacUrl"
+          END PART
+        END POLICY
+
+        POLICY !!ProxyBypassList_Policy
+          #if version >= 4
+            SUPPORTED !!SUPPORTED_WINXPSP2
+          #endif
+          EXPLAIN !!ProxyBypassList_Explain
+
+          PART !!ProxyBypassList_Part  EDITTEXT
+            VALUENAME "ProxyBypassList"
+          END PART
+        END POLICY
+
+      END CATEGORY
+
+      CATEGORY !!ChromeFrameContentTypes_Category
+        POLICY !!ChromeFrameContentTypes_Policy
+          #if version >= 4
+            SUPPORTED !!SUPPORTED_WINXPSP2
+          #endif
+          EXPLAIN !!ChromeFrameContentTypes_Explain
+
+          PART !!ChromeFrameContentTypes_Part  LISTBOX
+            KEYNAME "Software\Policies\Google\Chrome\ChromeFrameContentTypes"
+            VALUEPREFIX ""
+          END PART
+        END POLICY
+
+      END CATEGORY
+
+      CATEGORY !!ContentSettings_Category
+        POLICY !!DefaultCookiesSetting_Policy
+          #if version >= 4
+            SUPPORTED !!SUPPORTED_WINXPSP2
+          #endif
+          EXPLAIN !!DefaultCookiesSetting_Explain
+
+          PART !!DefaultCookiesSetting_Part  DROPDOWNLIST
+            VALUENAME "DefaultCookiesSetting"
+            ITEMLIST
+              NAME !!AllowCookies_DropDown VALUE NUMERIC 1
+              NAME !!BlockCookies_DropDown VALUE NUMERIC 2
+            END ITEMLIST
+          END PART
+        END POLICY
+
+        POLICY !!DefaultImagesSetting_Policy
+          #if version >= 4
+            SUPPORTED !!SUPPORTED_WINXPSP2
+          #endif
+          EXPLAIN !!DefaultImagesSetting_Explain
+
+          PART !!DefaultImagesSetting_Part  DROPDOWNLIST
+            VALUENAME "DefaultImagesSetting"
+            ITEMLIST
+              NAME !!AllowImages_DropDown VALUE NUMERIC 1
+              NAME !!BlockImages_DropDown VALUE NUMERIC 2
+            END ITEMLIST
+          END PART
+        END POLICY
+
+        POLICY !!DefaultJavaScriptSetting_Policy
+          #if version >= 4
+            SUPPORTED !!SUPPORTED_WINXPSP2
+          #endif
+          EXPLAIN !!DefaultJavaScriptSetting_Explain
+
+          PART !!DefaultJavaScriptSetting_Part  DROPDOWNLIST
+            VALUENAME "DefaultJavaScriptSetting"
+            ITEMLIST
+              NAME !!AllowJavaScript_DropDown VALUE NUMERIC 1
+              NAME !!BlockJavaScript_DropDown VALUE NUMERIC 2
+            END ITEMLIST
+          END PART
+        END POLICY
+
+        POLICY !!DefaultPluginsSetting_Policy
+          #if version >= 4
+            SUPPORTED !!SUPPORTED_WINXPSP2
+          #endif
+          EXPLAIN !!DefaultPluginsSetting_Explain
+
+          PART !!DefaultPluginsSetting_Part  DROPDOWNLIST
+            VALUENAME "DefaultPluginsSetting"
+            ITEMLIST
+              NAME !!AllowPlugins_DropDown VALUE NUMERIC 1
+              NAME !!BlockPlugins_DropDown VALUE NUMERIC 2
+            END ITEMLIST
+          END PART
+        END POLICY
+
+        POLICY !!DefaultPopupsSetting_Policy
+          #if version >= 4
+            SUPPORTED !!SUPPORTED_WINXPSP2
+          #endif
+          EXPLAIN !!DefaultPopupsSetting_Explain
+
+          PART !!DefaultPopupsSetting_Part  DROPDOWNLIST
+            VALUENAME "DefaultPopupsSetting"
+            ITEMLIST
+              NAME !!AllowPopups_DropDown VALUE NUMERIC 1
+              NAME !!BlockPopups_DropDown VALUE NUMERIC 2
+            END ITEMLIST
+          END PART
+        END POLICY
+
+        POLICY !!DefaultNotificationsSetting_Policy
+          #if version >= 4
+            SUPPORTED !!SUPPORTED_WINXPSP2
+          #endif
+          EXPLAIN !!DefaultNotificationsSetting_Explain
+
+          PART !!DefaultNotificationsSetting_Part  DROPDOWNLIST
+            VALUENAME "DefaultNotificationsSetting"
+            ITEMLIST
+              NAME !!AllowNotifications_DropDown VALUE NUMERIC 1
+              NAME !!BlockNotifications_DropDown VALUE NUMERIC 2
+              NAME !!AskNotifications_DropDown VALUE NUMERIC 3
+            END ITEMLIST
+          END PART
+        END POLICY
+
+        POLICY !!DefaultGeolocationSetting_Policy
+          #if version >= 4
+            SUPPORTED !!SUPPORTED_WINXPSP2
+          #endif
+          EXPLAIN !!DefaultGeolocationSetting_Explain
+
+          PART !!DefaultGeolocationSetting_Part  DROPDOWNLIST
+            VALUENAME "DefaultGeolocationSetting"
+            ITEMLIST
+              NAME !!AllowGeolocation_DropDown VALUE NUMERIC 1
+              NAME !!BlockGeolocation_DropDown VALUE NUMERIC 2
+              NAME !!AskGeolocation_DropDown VALUE NUMERIC 3
+            END ITEMLIST
+          END PART
+        END POLICY
+
+        POLICY !!AutoSelectCertificateForUrls_Policy
+          #if version >= 4
+            SUPPORTED !!SUPPORTED_WINXPSP2
+          #endif
+          EXPLAIN !!AutoSelectCertificateForUrls_Explain
+
+          PART !!AutoSelectCertificateForUrls_Part  LISTBOX
+            KEYNAME "Software\Policies\Google\Chrome\AutoSelectCertificateForUrls"
+            VALUEPREFIX ""
+          END PART
+        END POLICY
+
+        POLICY !!CookiesAllowedForUrls_Policy
+          #if version >= 4
+            SUPPORTED !!SUPPORTED_WINXPSP2
+          #endif
+          EXPLAIN !!CookiesAllowedForUrls_Explain
+
+          PART !!CookiesAllowedForUrls_Part  LISTBOX
+            KEYNAME "Software\Policies\Google\Chrome\CookiesAllowedForUrls"
+            VALUEPREFIX ""
+          END PART
+        END POLICY
+
+        POLICY !!CookiesBlockedForUrls_Policy
+          #if version >= 4
+            SUPPORTED !!SUPPORTED_WINXPSP2
+          #endif
+          EXPLAIN !!CookiesBlockedForUrls_Explain
+
+          PART !!CookiesBlockedForUrls_Part  LISTBOX
+            KEYNAME "Software\Policies\Google\Chrome\CookiesBlockedForUrls"
+            VALUEPREFIX ""
+          END PART
+        END POLICY
+
+        POLICY !!CookiesSessionOnlyForUrls_Policy
+          #if version >= 4
+            SUPPORTED !!SUPPORTED_WINXPSP2
+          #endif
+          EXPLAIN !!CookiesSessionOnlyForUrls_Explain
+
+          PART !!CookiesSessionOnlyForUrls_Part  LISTBOX
+            KEYNAME "Software\Policies\Google\Chrome\CookiesSessionOnlyForUrls"
+            VALUEPREFIX ""
+          END PART
+        END POLICY
+
+        POLICY !!ImagesAllowedForUrls_Policy
+          #if version >= 4
+            SUPPORTED !!SUPPORTED_WINXPSP2
+          #endif
+          EXPLAIN !!ImagesAllowedForUrls_Explain
+
+          PART !!ImagesAllowedForUrls_Part  LISTBOX
+            KEYNAME "Software\Policies\Google\Chrome\ImagesAllowedForUrls"
+            VALUEPREFIX ""
+          END PART
+        END POLICY
+
+        POLICY !!ImagesBlockedForUrls_Policy
+          #if version >= 4
+            SUPPORTED !!SUPPORTED_WINXPSP2
+          #endif
+          EXPLAIN !!ImagesBlockedForUrls_Explain
+
+          PART !!ImagesBlockedForUrls_Part  LISTBOX
+            KEYNAME "Software\Policies\Google\Chrome\ImagesBlockedForUrls"
+            VALUEPREFIX ""
+          END PART
+        END POLICY
+
+        POLICY !!JavaScriptAllowedForUrls_Policy
+          #if version >= 4
+            SUPPORTED !!SUPPORTED_WINXPSP2
+          #endif
+          EXPLAIN !!JavaScriptAllowedForUrls_Explain
+
+          PART !!JavaScriptAllowedForUrls_Part  LISTBOX
+            KEYNAME "Software\Policies\Google\Chrome\JavaScriptAllowedForUrls"
+            VALUEPREFIX ""
+          END PART
+        END POLICY
+
+        POLICY !!JavaScriptBlockedForUrls_Policy
+          #if version >= 4
+            SUPPORTED !!SUPPORTED_WINXPSP2
+          #endif
+          EXPLAIN !!JavaScriptBlockedForUrls_Explain
+
+          PART !!JavaScriptBlockedForUrls_Part  LISTBOX
+            KEYNAME "Software\Policies\Google\Chrome\JavaScriptBlockedForUrls"
+            VALUEPREFIX ""
+          END PART
+        END POLICY
+
+        POLICY !!PluginsAllowedForUrls_Policy
+          #if version >= 4
+            SUPPORTED !!SUPPORTED_WINXPSP2
+          #endif
+          EXPLAIN !!PluginsAllowedForUrls_Explain
+
+          PART !!PluginsAllowedForUrls_Part  LISTBOX
+            KEYNAME "Software\Policies\Google\Chrome\PluginsAllowedForUrls"
+            VALUEPREFIX ""
+          END PART
+        END POLICY
+
+        POLICY !!PluginsBlockedForUrls_Policy
+          #if version >= 4
+            SUPPORTED !!SUPPORTED_WINXPSP2
+          #endif
+          EXPLAIN !!PluginsBlockedForUrls_Explain
+
+          PART !!PluginsBlockedForUrls_Part  LISTBOX
+            KEYNAME "Software\Policies\Google\Chrome\PluginsBlockedForUrls"
+            VALUEPREFIX ""
+          END PART
+        END POLICY
+
+        POLICY !!PopupsAllowedForUrls_Policy
+          #if version >= 4
+            SUPPORTED !!SUPPORTED_WINXPSP2
+          #endif
+          EXPLAIN !!PopupsAllowedForUrls_Explain
+
+          PART !!PopupsAllowedForUrls_Part  LISTBOX
+            KEYNAME "Software\Policies\Google\Chrome\PopupsAllowedForUrls"
+            VALUEPREFIX ""
+          END PART
+        END POLICY
+
+        POLICY !!PopupsBlockedForUrls_Policy
+          #if version >= 4
+            SUPPORTED !!SUPPORTED_WINXPSP2
+          #endif
+          EXPLAIN !!PopupsBlockedForUrls_Explain
+
+          PART !!PopupsBlockedForUrls_Part  LISTBOX
+            KEYNAME "Software\Policies\Google\Chrome\PopupsBlockedForUrls"
+            VALUEPREFIX ""
+          END PART
+        END POLICY
+
+        POLICY !!NotificationsAllowedForUrls_Policy
+          #if version >= 4
+            SUPPORTED !!SUPPORTED_WINXPSP2
+          #endif
+          EXPLAIN !!NotificationsAllowedForUrls_Explain
+
+          PART !!NotificationsAllowedForUrls_Part  LISTBOX
+            KEYNAME "Software\Policies\Google\Chrome\NotificationsAllowedForUrls"
+            VALUEPREFIX ""
+          END PART
+        END POLICY
+
+        POLICY !!NotificationsBlockedForUrls_Policy
+          #if version >= 4
+            SUPPORTED !!SUPPORTED_WINXPSP2
+          #endif
+          EXPLAIN !!NotificationsBlockedForUrls_Explain
+
+          PART !!NotificationsBlockedForUrls_Part  LISTBOX
+            KEYNAME "Software\Policies\Google\Chrome\NotificationsBlockedForUrls"
+            VALUEPREFIX ""
+          END PART
+        END POLICY
+
+      END CATEGORY
+
+      CATEGORY !!RestoreOnStartupGroup_Category
+        POLICY !!RestoreOnStartup_Policy
+          #if version >= 4
+            SUPPORTED !!SUPPORTED_WINXPSP2
+          #endif
+          EXPLAIN !!RestoreOnStartup_Explain
+
+          PART !!RestoreOnStartup_Part  DROPDOWNLIST
+            VALUENAME "RestoreOnStartup"
+            ITEMLIST
+              NAME !!RestoreOnStartupIsNone_DropDown VALUE NUMERIC 0
+              NAME !!RestoreOnStartupIsLastSession_DropDown VALUE NUMERIC 1
+              NAME !!RestoreOnStartupIsURLs_DropDown VALUE NUMERIC 4
+            END ITEMLIST
+          END PART
+        END POLICY
+
+        POLICY !!RestoreOnStartupURLs_Policy
+          #if version >= 4
+            SUPPORTED !!SUPPORTED_WINXPSP2
+          #endif
+          EXPLAIN !!RestoreOnStartupURLs_Explain
+
+          PART !!RestoreOnStartupURLs_Part  LISTBOX
+            KEYNAME "Software\Policies\Google\Chrome\RestoreOnStartupURLs"
+            VALUEPREFIX ""
+          END PART
+        END POLICY
+
+      END CATEGORY
+
+      CATEGORY !!PasswordManager_Category
+        POLICY !!PasswordManagerEnabled_Policy
+          #if version >= 4
+            SUPPORTED !!SUPPORTED_WINXPSP2
+          #endif
+          EXPLAIN !!PasswordManagerEnabled_Explain
+          VALUENAME "PasswordManagerEnabled"
+          VALUEON NUMERIC 1
+          VALUEOFF NUMERIC 0
+        END POLICY
+
+        POLICY !!PasswordManagerAllowShowPasswords_Policy
+          #if version >= 4
+            SUPPORTED !!SUPPORTED_WINXPSP2
+          #endif
+          EXPLAIN !!PasswordManagerAllowShowPasswords_Explain
+          VALUENAME "PasswordManagerAllowShowPasswords"
+          VALUEON NUMERIC 1
+          VALUEOFF NUMERIC 0
+        END POLICY
+
+      END CATEGORY
+
+      CATEGORY !!Extensions_Category
+        POLICY !!ExtensionInstallBlacklist_Policy
+          #if version >= 4
+            SUPPORTED !!SUPPORTED_WINXPSP2
+          #endif
+          EXPLAIN !!ExtensionInstallBlacklist_Explain
+
+          PART !!ExtensionInstallBlacklist_Part  LISTBOX
+            KEYNAME "Software\Policies\Google\Chrome\ExtensionInstallBlacklist"
+            VALUEPREFIX ""
+          END PART
+        END POLICY
+
+        POLICY !!ExtensionInstallWhitelist_Policy
+          #if version >= 4
+            SUPPORTED !!SUPPORTED_WINXPSP2
+          #endif
+          EXPLAIN !!ExtensionInstallWhitelist_Explain
+
+          PART !!ExtensionInstallWhitelist_Part  LISTBOX
+            KEYNAME "Software\Policies\Google\Chrome\ExtensionInstallWhitelist"
+            VALUEPREFIX ""
+          END PART
+        END POLICY
+
+        POLICY !!ExtensionInstallForcelist_Policy
+          #if version >= 4
+            SUPPORTED !!SUPPORTED_WINXPSP2
+          #endif
+          EXPLAIN !!ExtensionInstallForcelist_Explain
+
+          PART !!ExtensionInstallForcelist_Part  LISTBOX
+            KEYNAME "Software\Policies\Google\Chrome\ExtensionInstallForcelist"
+            VALUEPREFIX ""
+          END PART
+        END POLICY
+
+      END CATEGORY
+
+      CATEGORY !!RemoteAccess_Category
+        POLICY !!RemoteAccessHostFirewallTraversal_Policy
+          #if version >= 4
+            SUPPORTED !!SUPPORTED_WINXPSP2
+          #endif
+          EXPLAIN !!RemoteAccessHostFirewallTraversal_Explain
+          VALUENAME "RemoteAccessHostFirewallTraversal"
+          VALUEON NUMERIC 1
+          VALUEOFF NUMERIC 0
+        END POLICY
+
+      END CATEGORY
+
+      CATEGORY !!ChromeFrameRendererSettings_Category
+        POLICY !!ChromeFrameRendererSettings_Policy
+          #if version >= 4
+            SUPPORTED !!SUPPORTED_WINXPSP2
+          #endif
+          EXPLAIN !!ChromeFrameRendererSettings_Explain
+
+          PART !!ChromeFrameRendererSettings_Part  DROPDOWNLIST
+            VALUENAME "ChromeFrameRendererSettings"
+            ITEMLIST
+              NAME !!RenderInHost_DropDown VALUE NUMERIC 0
+              NAME !!RenderInChromeFrame_DropDown VALUE NUMERIC 1
+            END ITEMLIST
+          END PART
+        END POLICY
+
+        POLICY !!RenderInChromeFrameList_Policy
+          #if version >= 4
+            SUPPORTED !!SUPPORTED_WINXPSP2
+          #endif
+          EXPLAIN !!RenderInChromeFrameList_Explain
+
+          PART !!RenderInChromeFrameList_Part  LISTBOX
+            KEYNAME "Software\Policies\Google\Chrome\RenderInChromeFrameList"
+            VALUEPREFIX ""
+          END PART
+        END POLICY
+
+        POLICY !!RenderInHostList_Policy
+          #if version >= 4
+            SUPPORTED !!SUPPORTED_WINXPSP2
+          #endif
+          EXPLAIN !!RenderInHostList_Explain
+
+          PART !!RenderInHostList_Part  LISTBOX
+            KEYNAME "Software\Policies\Google\Chrome\RenderInHostList"
+            VALUEPREFIX ""
+          END PART
+        END POLICY
+
+      END CATEGORY
+
+      CATEGORY !!DefaultSearchProvider_Category
+        POLICY !!DefaultSearchProviderEnabled_Policy
+          #if version >= 4
+            SUPPORTED !!SUPPORTED_WINXPSP2
+          #endif
+          EXPLAIN !!DefaultSearchProviderEnabled_Explain
+          VALUENAME "DefaultSearchProviderEnabled"
+          VALUEON NUMERIC 1
+          VALUEOFF NUMERIC 0
+        END POLICY
+
+        POLICY !!DefaultSearchProviderName_Policy
+          #if version >= 4
+            SUPPORTED !!SUPPORTED_WINXPSP2
+          #endif
+          EXPLAIN !!DefaultSearchProviderName_Explain
+
+          PART !!DefaultSearchProviderName_Part  EDITTEXT
+            VALUENAME "DefaultSearchProviderName"
+          END PART
+        END POLICY
+
+        POLICY !!DefaultSearchProviderKeyword_Policy
+          #if version >= 4
+            SUPPORTED !!SUPPORTED_WINXPSP2
+          #endif
+          EXPLAIN !!DefaultSearchProviderKeyword_Explain
+
+          PART !!DefaultSearchProviderKeyword_Part  EDITTEXT
+            VALUENAME "DefaultSearchProviderKeyword"
+          END PART
+        END POLICY
+
+        POLICY !!DefaultSearchProviderSearchURL_Policy
+          #if version >= 4
+            SUPPORTED !!SUPPORTED_WINXPSP2
+          #endif
+          EXPLAIN !!DefaultSearchProviderSearchURL_Explain
+
+          PART !!DefaultSearchProviderSearchURL_Part  EDITTEXT
+            VALUENAME "DefaultSearchProviderSearchURL"
+          END PART
+        END POLICY
+
+        POLICY !!DefaultSearchProviderSuggestURL_Policy
+          #if version >= 4
+            SUPPORTED !!SUPPORTED_WINXPSP2
+          #endif
+          EXPLAIN !!DefaultSearchProviderSuggestURL_Explain
+
+          PART !!DefaultSearchProviderSuggestURL_Part  EDITTEXT
+            VALUENAME "DefaultSearchProviderSuggestURL"
+          END PART
+        END POLICY
+
+        POLICY !!DefaultSearchProviderInstantURL_Policy
+          #if version >= 4
+            SUPPORTED !!SUPPORTED_WINXPSP2
+          #endif
+          EXPLAIN !!DefaultSearchProviderInstantURL_Explain
+
+          PART !!DefaultSearchProviderInstantURL_Part  EDITTEXT
+            VALUENAME "DefaultSearchProviderInstantURL"
+          END PART
+        END POLICY
+
+        POLICY !!DefaultSearchProviderIconURL_Policy
+          #if version >= 4
+            SUPPORTED !!SUPPORTED_WINXPSP2
+          #endif
+          EXPLAIN !!DefaultSearchProviderIconURL_Explain
+
+          PART !!DefaultSearchProviderIconURL_Part  EDITTEXT
+            VALUENAME "DefaultSearchProviderIconURL"
+          END PART
+        END POLICY
+
+        POLICY !!DefaultSearchProviderEncodings_Policy
+          #if version >= 4
+            SUPPORTED !!SUPPORTED_WINXPSP2
+          #endif
+          EXPLAIN !!DefaultSearchProviderEncodings_Explain
+
+          PART !!DefaultSearchProviderEncodings_Part  LISTBOX
+            KEYNAME "Software\Policies\Google\Chrome\DefaultSearchProviderEncodings"
+            VALUEPREFIX ""
+          END PART
+        END POLICY
+
+      END CATEGORY
+
+      POLICY !!AllowFileSelectionDialogs_Policy
+        #if version >= 4
+          SUPPORTED !!SUPPORTED_WINXPSP2
+        #endif
+        EXPLAIN !!AllowFileSelectionDialogs_Explain
+        VALUENAME "AllowFileSelectionDialogs"
+        VALUEON NUMERIC 1
+        VALUEOFF NUMERIC 0
+      END POLICY
+
+      POLICY !!AllowOutdatedPlugins_Policy
+        #if version >= 4
+          SUPPORTED !!SUPPORTED_WINXPSP2
+        #endif
+        EXPLAIN !!AllowOutdatedPlugins_Explain
+        VALUENAME "AllowOutdatedPlugins"
+        VALUEON NUMERIC 1
+        VALUEOFF NUMERIC 0
+      END POLICY
+
+      POLICY !!AlternateErrorPagesEnabled_Policy
+        #if version >= 4
+          SUPPORTED !!SUPPORTED_WINXPSP2
+        #endif
+        EXPLAIN !!AlternateErrorPagesEnabled_Explain
+        VALUENAME "AlternateErrorPagesEnabled"
+        VALUEON NUMERIC 1
+        VALUEOFF NUMERIC 0
+      END POLICY
+
+      POLICY !!AlwaysAuthorizePlugins_Policy
+        #if version >= 4
+          SUPPORTED !!SUPPORTED_WINXPSP2
+        #endif
+        EXPLAIN !!AlwaysAuthorizePlugins_Explain
+        VALUENAME "AlwaysAuthorizePlugins"
+        VALUEON NUMERIC 1
+        VALUEOFF NUMERIC 0
+      END POLICY
+
+      POLICY !!ApplicationLocaleValue_Policy
+        #if version >= 4
+          SUPPORTED !!SUPPORTED_WINXPSP2
+        #endif
+        EXPLAIN !!ApplicationLocaleValue_Explain
+
+        PART !!ApplicationLocaleValue_Part  EDITTEXT
+          VALUENAME "ApplicationLocaleValue"
+        END PART
+      END POLICY
+
+      POLICY !!AutoFillEnabled_Policy
+        #if version >= 4
+          SUPPORTED !!SUPPORTED_WINXPSP2
+        #endif
+        EXPLAIN !!AutoFillEnabled_Explain
+        VALUENAME "AutoFillEnabled"
+        VALUEON NUMERIC 1
+        VALUEOFF NUMERIC 0
+      END POLICY
+
+      POLICY !!BackgroundModeEnabled_Policy
+        #if version >= 4
+          SUPPORTED !!SUPPORTED_WINXPSP2
+        #endif
+        EXPLAIN !!BackgroundModeEnabled_Explain
+        VALUENAME "BackgroundModeEnabled"
+        VALUEON NUMERIC 1
+        VALUEOFF NUMERIC 0
+      END POLICY
+
+      POLICY !!BlockThirdPartyCookies_Policy
+        #if version >= 4
+          SUPPORTED !!SUPPORTED_WINXPSP2
+        #endif
+        EXPLAIN !!BlockThirdPartyCookies_Explain
+        VALUENAME "BlockThirdPartyCookies"
+        VALUEON NUMERIC 1
+        VALUEOFF NUMERIC 0
+      END POLICY
+
+      POLICY !!BookmarkBarEnabled_Policy
+        #if version >= 4
+          SUPPORTED !!SUPPORTED_WINXPSP2
+        #endif
+        EXPLAIN !!BookmarkBarEnabled_Explain
+        VALUENAME "BookmarkBarEnabled"
+        VALUEON NUMERIC 1
+        VALUEOFF NUMERIC 0
+      END POLICY
+
+      POLICY !!ClearSiteDataOnExit_Policy
+        #if version >= 4
+          SUPPORTED !!SUPPORTED_WINXPSP2
+        #endif
+        EXPLAIN !!ClearSiteDataOnExit_Explain
+        VALUENAME "ClearSiteDataOnExit"
+        VALUEON NUMERIC 1
+        VALUEOFF NUMERIC 0
+      END POLICY
+
+      POLICY !!CloudPrintProxyEnabled_Policy
+        #if version >= 4
+          SUPPORTED !!SUPPORTED_WINXPSP2
+        #endif
+        EXPLAIN !!CloudPrintProxyEnabled_Explain
+        VALUENAME "CloudPrintProxyEnabled"
+        VALUEON NUMERIC 1
+        VALUEOFF NUMERIC 0
+      END POLICY
+
+      POLICY !!CloudPrintSubmitEnabled_Policy
+        #if version >= 4
+          SUPPORTED !!SUPPORTED_WINXPSP2
+        #endif
+        EXPLAIN !!CloudPrintSubmitEnabled_Explain
+        VALUENAME "CloudPrintSubmitEnabled"
+        VALUEON NUMERIC 1
+        VALUEOFF NUMERIC 0
+      END POLICY
+
+      POLICY !!DefaultBrowserSettingEnabled_Policy
+        #if version >= 4
+          SUPPORTED !!SUPPORTED_WINXPSP2
+        #endif
+        EXPLAIN !!DefaultBrowserSettingEnabled_Explain
+        VALUENAME "DefaultBrowserSettingEnabled"
+        VALUEON NUMERIC 1
+        VALUEOFF NUMERIC 0
+      END POLICY
+
+      POLICY !!DeveloperToolsDisabled_Policy
+        #if version >= 4
+          SUPPORTED !!SUPPORTED_WINXPSP2
+        #endif
+        EXPLAIN !!DeveloperToolsDisabled_Explain
+        VALUENAME "DeveloperToolsDisabled"
+        VALUEON NUMERIC 1
+        VALUEOFF NUMERIC 0
+      END POLICY
+
+      POLICY !!Disable3DAPIs_Policy
+        #if version >= 4
+          SUPPORTED !!SUPPORTED_WINXPSP2
+        #endif
+        EXPLAIN !!Disable3DAPIs_Explain
+        VALUENAME "Disable3DAPIs"
+        VALUEON NUMERIC 1
+        VALUEOFF NUMERIC 0
+      END POLICY
+
+      POLICY !!DisablePluginFinder_Policy
+        #if version >= 4
+          SUPPORTED !!SUPPORTED_WINXPSP2
+        #endif
+        EXPLAIN !!DisablePluginFinder_Explain
+        VALUENAME "DisablePluginFinder"
+        VALUEON NUMERIC 1
+        VALUEOFF NUMERIC 0
+      END POLICY
+
+      POLICY !!DisablePrintPreview_Policy
+        #if version >= 4
+          SUPPORTED !!SUPPORTED_WINXPSP2
+        #endif
+        EXPLAIN !!DisablePrintPreview_Explain
+        VALUENAME "DisablePrintPreview"
+        VALUEON NUMERIC 1
+        VALUEOFF NUMERIC 0
+      END POLICY
+
+      POLICY !!DisableSSLRecordSplitting_Policy
+        #if version >= 4
+          SUPPORTED !!SUPPORTED_WINXPSP2
+        #endif
+        EXPLAIN !!DisableSSLRecordSplitting_Explain
+        VALUENAME "DisableSSLRecordSplitting"
+        VALUEON NUMERIC 1
+        VALUEOFF NUMERIC 0
+      END POLICY
+
+      POLICY !!DisableSpdy_Policy
+        #if version >= 4
+          SUPPORTED !!SUPPORTED_WINXPSP2
+        #endif
+        EXPLAIN !!DisableSpdy_Explain
+        VALUENAME "DisableSpdy"
+        VALUEON NUMERIC 1
+        VALUEOFF NUMERIC 0
+      END POLICY
+
+      POLICY !!DisabledPlugins_Policy
+        #if version >= 4
+          SUPPORTED !!SUPPORTED_WINXPSP2
+        #endif
+        EXPLAIN !!DisabledPlugins_Explain
+
+        PART !!DisabledPlugins_Part  LISTBOX
+          KEYNAME "Software\Policies\Google\Chrome\DisabledPlugins"
+          VALUEPREFIX ""
+        END PART
+      END POLICY
+
+      POLICY !!DisabledPluginsExceptions_Policy
+        #if version >= 4
+          SUPPORTED !!SUPPORTED_WINXPSP2
+        #endif
+        EXPLAIN !!DisabledPluginsExceptions_Explain
+
+        PART !!DisabledPluginsExceptions_Part  LISTBOX
+          KEYNAME "Software\Policies\Google\Chrome\DisabledPluginsExceptions"
+          VALUEPREFIX ""
+        END PART
+      END POLICY
+
+      POLICY !!DisabledSchemes_Policy
+        #if version >= 4
+          SUPPORTED !!SUPPORTED_WINXPSP2
+        #endif
+        EXPLAIN !!DisabledSchemes_Explain
+
+        PART !!DisabledSchemes_Part  LISTBOX
+          KEYNAME "Software\Policies\Google\Chrome\DisabledSchemes"
+          VALUEPREFIX ""
+        END PART
+      END POLICY
+
+      POLICY !!DiskCacheDir_Policy
+        #if version >= 4
+          SUPPORTED !!SUPPORTED_WINXPSP2
+        #endif
+        EXPLAIN !!DiskCacheDir_Explain
+
+        PART !!DiskCacheDir_Part  EDITTEXT
+          VALUENAME "DiskCacheDir"
+        END PART
+      END POLICY
+
+      POLICY !!DiskCacheSize_Policy
+        #if version >= 4
+          SUPPORTED !!SUPPORTED_WINXPSP2
+        #endif
+        EXPLAIN !!DiskCacheSize_Explain
+
+        PART !!DiskCacheSize_Part  NUMERIC
+          VALUENAME "DiskCacheSize"
+        END PART
+      END POLICY
+
+      POLICY !!DnsPrefetchingEnabled_Policy
+        #if version >= 4
+          SUPPORTED !!SUPPORTED_WINXPSP2
+        #endif
+        EXPLAIN !!DnsPrefetchingEnabled_Explain
+        VALUENAME "DnsPrefetchingEnabled"
+        VALUEON NUMERIC 1
+        VALUEOFF NUMERIC 0
+      END POLICY
+
+      POLICY !!DownloadDirectory_Policy
+        #if version >= 4
+          SUPPORTED !!SUPPORTED_WINXPSP2
+        #endif
+        EXPLAIN !!DownloadDirectory_Explain
+
+        PART !!DownloadDirectory_Part  EDITTEXT
+          VALUENAME "DownloadDirectory"
+        END PART
+      END POLICY
+
+      POLICY !!EditBookmarksEnabled_Policy
+        #if version >= 4
+          SUPPORTED !!SUPPORTED_WINXPSP2
+        #endif
+        EXPLAIN !!EditBookmarksEnabled_Explain
+        VALUENAME "EditBookmarksEnabled"
+        VALUEON NUMERIC 1
+        VALUEOFF NUMERIC 0
+      END POLICY
+
+      POLICY !!EnableOnlineRevocationChecks_Policy
+        #if version >= 4
+          SUPPORTED !!SUPPORTED_WINXPSP2
+        #endif
+        EXPLAIN !!EnableOnlineRevocationChecks_Explain
+        VALUENAME "EnableOnlineRevocationChecks"
+        VALUEON NUMERIC 1
+        VALUEOFF NUMERIC 0
+      END POLICY
+
+      POLICY !!EnabledPlugins_Policy
+        #if version >= 4
+          SUPPORTED !!SUPPORTED_WINXPSP2
+        #endif
+        EXPLAIN !!EnabledPlugins_Explain
+
+        PART !!EnabledPlugins_Part  LISTBOX
+          KEYNAME "Software\Policies\Google\Chrome\EnabledPlugins"
+          VALUEPREFIX ""
+        END PART
+      END POLICY
+
+      POLICY !!EnterpriseWebStoreName_Policy
+        #if version >= 4
+          SUPPORTED !!SUPPORTED_WINXPSP2
+        #endif
+        EXPLAIN !!EnterpriseWebStoreName_Explain
+
+        PART !!EnterpriseWebStoreName_Part  EDITTEXT
+          VALUENAME "EnterpriseWebStoreName"
+        END PART
+      END POLICY
+
+      POLICY !!EnterpriseWebStoreURL_Policy
+        #if version >= 4
+          SUPPORTED !!SUPPORTED_WINXPSP2
+        #endif
+        EXPLAIN !!EnterpriseWebStoreURL_Explain
+
+        PART !!EnterpriseWebStoreURL_Part  EDITTEXT
+          VALUENAME "EnterpriseWebStoreURL"
+        END PART
+      END POLICY
+
+      POLICY !!GCFUserDataDir_Policy
+        #if version >= 4
+          SUPPORTED !!SUPPORTED_WINXPSP2
+        #endif
+        EXPLAIN !!GCFUserDataDir_Explain
+
+        PART !!GCFUserDataDir_Part  EDITTEXT
+          VALUENAME "GCFUserDataDir"
+        END PART
+      END POLICY
+
+      POLICY !!HideWebStorePromo_Policy
+        #if version >= 4
+          SUPPORTED !!SUPPORTED_WINXPSP2
+        #endif
+        EXPLAIN !!HideWebStorePromo_Explain
+        VALUENAME "HideWebStorePromo"
+        VALUEON NUMERIC 1
+        VALUEOFF NUMERIC 0
+      END POLICY
+
+      POLICY !!ImportBookmarks_Policy
+        #if version >= 4
+          SUPPORTED !!SUPPORTED_WINXPSP2
+        #endif
+        EXPLAIN !!ImportBookmarks_Explain
+        VALUENAME "ImportBookmarks"
+        VALUEON NUMERIC 1
+        VALUEOFF NUMERIC 0
+      END POLICY
+
+      POLICY !!ImportHistory_Policy
+        #if version >= 4
+          SUPPORTED !!SUPPORTED_WINXPSP2
+        #endif
+        EXPLAIN !!ImportHistory_Explain
+        VALUENAME "ImportHistory"
+        VALUEON NUMERIC 1
+        VALUEOFF NUMERIC 0
+      END POLICY
+
+      POLICY !!ImportHomepage_Policy
+        #if version >= 4
+          SUPPORTED !!SUPPORTED_WINXPSP2
+        #endif
+        EXPLAIN !!ImportHomepage_Explain
+        VALUENAME "ImportHomepage"
+        VALUEON NUMERIC 1
+        VALUEOFF NUMERIC 0
+      END POLICY
+
+      POLICY !!ImportSavedPasswords_Policy
+        #if version >= 4
+          SUPPORTED !!SUPPORTED_WINXPSP2
+        #endif
+        EXPLAIN !!ImportSavedPasswords_Explain
+        VALUENAME "ImportSavedPasswords"
+        VALUEON NUMERIC 1
+        VALUEOFF NUMERIC 0
+      END POLICY
+
+      POLICY !!ImportSearchEngine_Policy
+        #if version >= 4
+          SUPPORTED !!SUPPORTED_WINXPSP2
+        #endif
+        EXPLAIN !!ImportSearchEngine_Explain
+        VALUENAME "ImportSearchEngine"
+        VALUEON NUMERIC 1
+        VALUEOFF NUMERIC 0
+      END POLICY
+
+      POLICY !!IncognitoModeAvailability_Policy
+        #if version >= 4
+          SUPPORTED !!SUPPORTED_WINXPSP2
+        #endif
+        EXPLAIN !!IncognitoModeAvailability_Explain
+
+        PART !!IncognitoModeAvailability_Part  DROPDOWNLIST
+          VALUENAME "IncognitoModeAvailability"
+          ITEMLIST
+            NAME !!Enabled_DropDown VALUE NUMERIC 0
+            NAME !!Disabled_DropDown VALUE NUMERIC 1
+            NAME !!Forced_DropDown VALUE NUMERIC 2
+          END ITEMLIST
+        END PART
+      END POLICY
+
+      POLICY !!InstantEnabled_Policy
+        #if version >= 4
+          SUPPORTED !!SUPPORTED_WINXPSP2
+        #endif
+        EXPLAIN !!InstantEnabled_Explain
+        VALUENAME "InstantEnabled"
+        VALUEON NUMERIC 1
+        VALUEOFF NUMERIC 0
+      END POLICY
+
+      POLICY !!MaxConnectionsPerProxy_Policy
+        #if version >= 4
+          SUPPORTED !!SUPPORTED_WINXPSP2
+        #endif
+        EXPLAIN !!MaxConnectionsPerProxy_Explain
+
+        PART !!MaxConnectionsPerProxy_Part  NUMERIC
+          VALUENAME "MaxConnectionsPerProxy"
+        END PART
+      END POLICY
+
+      POLICY !!MediaCacheSize_Policy
+        #if version >= 4
+          SUPPORTED !!SUPPORTED_WINXPSP2
+        #endif
+        EXPLAIN !!MediaCacheSize_Explain
+
+        PART !!MediaCacheSize_Part  NUMERIC
+          VALUENAME "MediaCacheSize"
+        END PART
+      END POLICY
+
+      POLICY !!MetricsReportingEnabled_Policy
+        #if version >= 4
+          SUPPORTED !!SUPPORTED_WINXPSP2
+        #endif
+        EXPLAIN !!MetricsReportingEnabled_Explain
+        VALUENAME "MetricsReportingEnabled"
+        VALUEON NUMERIC 1
+        VALUEOFF NUMERIC 0
+      END POLICY
+
+      POLICY !!PrintingEnabled_Policy
+        #if version >= 4
+          SUPPORTED !!SUPPORTED_WINXPSP2
+        #endif
+        EXPLAIN !!PrintingEnabled_Explain
+        VALUENAME "PrintingEnabled"
+        VALUEON NUMERIC 1
+        VALUEOFF NUMERIC 0
+      END POLICY
+
+      POLICY !!SafeBrowsingEnabled_Policy
+        #if version >= 4
+          SUPPORTED !!SUPPORTED_WINXPSP2
+        #endif
+        EXPLAIN !!SafeBrowsingEnabled_Explain
+        VALUENAME "SafeBrowsingEnabled"
+        VALUEON NUMERIC 1
+        VALUEOFF NUMERIC 0
+      END POLICY
+
+      POLICY !!SavingBrowserHistoryDisabled_Policy
+        #if version >= 4
+          SUPPORTED !!SUPPORTED_WINXPSP2
+        #endif
+        EXPLAIN !!SavingBrowserHistoryDisabled_Explain
+        VALUENAME "SavingBrowserHistoryDisabled"
+        VALUEON NUMERIC 1
+        VALUEOFF NUMERIC 0
+      END POLICY
+
+      POLICY !!SearchSuggestEnabled_Policy
+        #if version >= 4
+          SUPPORTED !!SUPPORTED_WINXPSP2
+        #endif
+        EXPLAIN !!SearchSuggestEnabled_Explain
+        VALUENAME "SearchSuggestEnabled"
+        VALUEON NUMERIC 1
+        VALUEOFF NUMERIC 0
+      END POLICY
+
+      POLICY !!ShowHomeButton_Policy
+        #if version >= 4
+          SUPPORTED !!SUPPORTED_WINXPSP2
+        #endif
+        EXPLAIN !!ShowHomeButton_Explain
+        VALUENAME "ShowHomeButton"
+        VALUEON NUMERIC 1
+        VALUEOFF NUMERIC 0
+      END POLICY
+
+      POLICY !!SyncDisabled_Policy
+        #if version >= 4
+          SUPPORTED !!SUPPORTED_WINXPSP2
+        #endif
+        EXPLAIN !!SyncDisabled_Explain
+        VALUENAME "SyncDisabled"
+        VALUEON NUMERIC 1
+        VALUEOFF NUMERIC 0
+      END POLICY
+
+      POLICY !!TranslateEnabled_Policy
+        #if version >= 4
+          SUPPORTED !!SUPPORTED_WINXPSP2
+        #endif
+        EXPLAIN !!TranslateEnabled_Explain
+        VALUENAME "TranslateEnabled"
+        VALUEON NUMERIC 1
+        VALUEOFF NUMERIC 0
+      END POLICY
+
+      POLICY !!URLBlacklist_Policy
+        #if version >= 4
+          SUPPORTED !!SUPPORTED_WINXPSP2
+        #endif
+        EXPLAIN !!URLBlacklist_Explain
+
+        PART !!URLBlacklist_Part  LISTBOX
+          KEYNAME "Software\Policies\Google\Chrome\URLBlacklist"
+          VALUEPREFIX ""
+        END PART
+      END POLICY
+
+      POLICY !!URLWhitelist_Policy
+        #if version >= 4
+          SUPPORTED !!SUPPORTED_WINXPSP2
+        #endif
+        EXPLAIN !!URLWhitelist_Explain
+
+        PART !!URLWhitelist_Part  LISTBOX
+          KEYNAME "Software\Policies\Google\Chrome\URLWhitelist"
+          VALUEPREFIX ""
+        END PART
+      END POLICY
+
+      POLICY !!UserDataDir_Policy
+        #if version >= 4
+          SUPPORTED !!SUPPORTED_WINXPSP2
+        #endif
+        EXPLAIN !!UserDataDir_Explain
+
+        PART !!UserDataDir_Part  EDITTEXT
+          VALUENAME "UserDataDir"
+        END PART
+      END POLICY
+
+    END CATEGORY
+  END CATEGORY
+
+  CATEGORY !!google
+    CATEGORY !!googlechrome_recommended
+      KEYNAME "Software\Policies\Google\Chrome\Recommended"
+
+      CATEGORY !!Homepage_Category
+        POLICY !!HomepageLocation_Policy
+          #if version >= 4
+            SUPPORTED !!SUPPORTED_WINXPSP2
+          #endif
+          EXPLAIN !!HomepageLocation_Explain
+
+          PART !!HomepageLocation_Part  EDITTEXT
+            VALUENAME "HomepageLocation"
+          END PART
+        END POLICY
+
+        POLICY !!HomepageIsNewTabPage_Policy
+          #if version >= 4
+            SUPPORTED !!SUPPORTED_WINXPSP2
+          #endif
+          EXPLAIN !!HomepageIsNewTabPage_Explain
+          VALUENAME "HomepageIsNewTabPage"
+          VALUEON NUMERIC 1
+          VALUEOFF NUMERIC 0
+        END POLICY
+
+      END CATEGORY
+
+      CATEGORY !!RestoreOnStartupGroup_Category
+        POLICY !!RestoreOnStartup_Policy
+          #if version >= 4
+            SUPPORTED !!SUPPORTED_WINXPSP2
+          #endif
+          EXPLAIN !!RestoreOnStartup_Explain
+
+          PART !!RestoreOnStartup_Part  DROPDOWNLIST
+            VALUENAME "RestoreOnStartup"
+            ITEMLIST
+              NAME !!RestoreOnStartupIsNone_DropDown VALUE NUMERIC 0
+              NAME !!RestoreOnStartupIsLastSession_DropDown VALUE NUMERIC 1
+              NAME !!RestoreOnStartupIsURLs_DropDown VALUE NUMERIC 4
+            END ITEMLIST
+          END PART
+        END POLICY
+
+      END CATEGORY
+
+      CATEGORY !!PasswordManager_Category
+        POLICY !!PasswordManagerEnabled_Policy
+          #if version >= 4
+            SUPPORTED !!SUPPORTED_WINXPSP2
+          #endif
+          EXPLAIN !!PasswordManagerEnabled_Explain
+          VALUENAME "PasswordManagerEnabled"
+          VALUEON NUMERIC 1
+          VALUEOFF NUMERIC 0
+        END POLICY
+
+      END CATEGORY
+
+      POLICY !!AlternateErrorPagesEnabled_Policy
+        #if version >= 4
+          SUPPORTED !!SUPPORTED_WINXPSP2
+        #endif
+        EXPLAIN !!AlternateErrorPagesEnabled_Explain
+        VALUENAME "AlternateErrorPagesEnabled"
+        VALUEON NUMERIC 1
+        VALUEOFF NUMERIC 0
+      END POLICY
+
+      POLICY !!ApplicationLocaleValue_Policy
+        #if version >= 4
+          SUPPORTED !!SUPPORTED_WINXPSP2
+        #endif
+        EXPLAIN !!ApplicationLocaleValue_Explain
+
+        PART !!ApplicationLocaleValue_Part  EDITTEXT
+          VALUENAME "ApplicationLocaleValue"
+        END PART
+      END POLICY
+
+      POLICY !!AutoFillEnabled_Policy
+        #if version >= 4
+          SUPPORTED !!SUPPORTED_WINXPSP2
+        #endif
+        EXPLAIN !!AutoFillEnabled_Explain
+        VALUENAME "AutoFillEnabled"
+        VALUEON NUMERIC 1
+        VALUEOFF NUMERIC 0
+      END POLICY
+
+      POLICY !!BackgroundModeEnabled_Policy
+        #if version >= 4
+          SUPPORTED !!SUPPORTED_WINXPSP2
+        #endif
+        EXPLAIN !!BackgroundModeEnabled_Explain
+        VALUENAME "BackgroundModeEnabled"
+        VALUEON NUMERIC 1
+        VALUEOFF NUMERIC 0
+      END POLICY
+
+      POLICY !!BlockThirdPartyCookies_Policy
+        #if version >= 4
+          SUPPORTED !!SUPPORTED_WINXPSP2
+        #endif
+        EXPLAIN !!BlockThirdPartyCookies_Explain
+        VALUENAME "BlockThirdPartyCookies"
+        VALUEON NUMERIC 1
+        VALUEOFF NUMERIC 0
+      END POLICY
+
+      POLICY !!BookmarkBarEnabled_Policy
+        #if version >= 4
+          SUPPORTED !!SUPPORTED_WINXPSP2
+        #endif
+        EXPLAIN !!BookmarkBarEnabled_Explain
+        VALUENAME "BookmarkBarEnabled"
+        VALUEON NUMERIC 1
+        VALUEOFF NUMERIC 0
+      END POLICY
+
+      POLICY !!ClearSiteDataOnExit_Policy
+        #if version >= 4
+          SUPPORTED !!SUPPORTED_WINXPSP2
+        #endif
+        EXPLAIN !!ClearSiteDataOnExit_Explain
+        VALUENAME "ClearSiteDataOnExit"
+        VALUEON NUMERIC 1
+        VALUEOFF NUMERIC 0
+      END POLICY
+
+      POLICY !!DnsPrefetchingEnabled_Policy
+        #if version >= 4
+          SUPPORTED !!SUPPORTED_WINXPSP2
+        #endif
+        EXPLAIN !!DnsPrefetchingEnabled_Explain
+        VALUENAME "DnsPrefetchingEnabled"
+        VALUEON NUMERIC 1
+        VALUEOFF NUMERIC 0
+      END POLICY
+
+      POLICY !!DownloadDirectory_Policy
+        #if version >= 4
+          SUPPORTED !!SUPPORTED_WINXPSP2
+        #endif
+        EXPLAIN !!DownloadDirectory_Explain
+
+        PART !!DownloadDirectory_Part  EDITTEXT
+          VALUENAME "DownloadDirectory"
+        END PART
+      END POLICY
+
+      POLICY !!ImportBookmarks_Policy
+        #if version >= 4
+          SUPPORTED !!SUPPORTED_WINXPSP2
+        #endif
+        EXPLAIN !!ImportBookmarks_Explain
+        VALUENAME "ImportBookmarks"
+        VALUEON NUMERIC 1
+        VALUEOFF NUMERIC 0
+      END POLICY
+
+      POLICY !!ImportHistory_Policy
+        #if version >= 4
+          SUPPORTED !!SUPPORTED_WINXPSP2
+        #endif
+        EXPLAIN !!ImportHistory_Explain
+        VALUENAME "ImportHistory"
+        VALUEON NUMERIC 1
+        VALUEOFF NUMERIC 0
+      END POLICY
+
+      POLICY !!ImportHomepage_Policy
+        #if version >= 4
+          SUPPORTED !!SUPPORTED_WINXPSP2
+        #endif
+        EXPLAIN !!ImportHomepage_Explain
+        VALUENAME "ImportHomepage"
+        VALUEON NUMERIC 1
+        VALUEOFF NUMERIC 0
+      END POLICY
+
+      POLICY !!ImportSavedPasswords_Policy
+        #if version >= 4
+          SUPPORTED !!SUPPORTED_WINXPSP2
+        #endif
+        EXPLAIN !!ImportSavedPasswords_Explain
+        VALUENAME "ImportSavedPasswords"
+        VALUEON NUMERIC 1
+        VALUEOFF NUMERIC 0
+      END POLICY
+
+      POLICY !!ImportSearchEngine_Policy
+        #if version >= 4
+          SUPPORTED !!SUPPORTED_WINXPSP2
+        #endif
+        EXPLAIN !!ImportSearchEngine_Explain
+        VALUENAME "ImportSearchEngine"
+        VALUEON NUMERIC 1
+        VALUEOFF NUMERIC 0
+      END POLICY
+
+      POLICY !!InstantEnabled_Policy
+        #if version >= 4
+          SUPPORTED !!SUPPORTED_WINXPSP2
+        #endif
+        EXPLAIN !!InstantEnabled_Explain
+        VALUENAME "InstantEnabled"
+        VALUEON NUMERIC 1
+        VALUEOFF NUMERIC 0
+      END POLICY
+
+      POLICY !!MetricsReportingEnabled_Policy
+        #if version >= 4
+          SUPPORTED !!SUPPORTED_WINXPSP2
+        #endif
+        EXPLAIN !!MetricsReportingEnabled_Explain
+        VALUENAME "MetricsReportingEnabled"
+        VALUEON NUMERIC 1
+        VALUEOFF NUMERIC 0
+      END POLICY
+
+      POLICY !!SafeBrowsingEnabled_Policy
+        #if version >= 4
+          SUPPORTED !!SUPPORTED_WINXPSP2
+        #endif
+        EXPLAIN !!SafeBrowsingEnabled_Explain
+        VALUENAME "SafeBrowsingEnabled"
+        VALUEON NUMERIC 1
+        VALUEOFF NUMERIC 0
+      END POLICY
+
+      POLICY !!SearchSuggestEnabled_Policy
+        #if version >= 4
+          SUPPORTED !!SUPPORTED_WINXPSP2
+        #endif
+        EXPLAIN !!SearchSuggestEnabled_Explain
+        VALUENAME "SearchSuggestEnabled"
+        VALUEON NUMERIC 1
+        VALUEOFF NUMERIC 0
+      END POLICY
+
+      POLICY !!ShowHomeButton_Policy
+        #if version >= 4
+          SUPPORTED !!SUPPORTED_WINXPSP2
+        #endif
+        EXPLAIN !!ShowHomeButton_Explain
+        VALUENAME "ShowHomeButton"
+        VALUEON NUMERIC 1
+        VALUEOFF NUMERIC 0
+      END POLICY
+
+      POLICY !!TranslateEnabled_Policy
+        #if version >= 4
+          SUPPORTED !!SUPPORTED_WINXPSP2
+        #endif
+        EXPLAIN !!TranslateEnabled_Explain
+        VALUENAME "TranslateEnabled"
+        VALUEON NUMERIC 1
+        VALUEOFF NUMERIC 0
+      END POLICY
+
+    END CATEGORY
+  END CATEGORY
+
+
+CLASS USER
+  CATEGORY !!google
+    CATEGORY !!googlechrome
+      KEYNAME "Software\Policies\Google\Chrome"
+
+      CATEGORY !!HTTPAuthentication_Category
+        POLICY !!AuthSchemes_Policy
+          #if version >= 4
+            SUPPORTED !!SUPPORTED_WINXPSP2
+          #endif
+          EXPLAIN !!AuthSchemes_Explain
+
+          PART !!AuthSchemes_Part  EDITTEXT
+            VALUENAME "AuthSchemes"
+          END PART
+        END POLICY
+
+        POLICY !!DisableAuthNegotiateCnameLookup_Policy
+          #if version >= 4
+            SUPPORTED !!SUPPORTED_WINXPSP2
+          #endif
+          EXPLAIN !!DisableAuthNegotiateCnameLookup_Explain
+          VALUENAME "DisableAuthNegotiateCnameLookup"
+          VALUEON NUMERIC 1
+          VALUEOFF NUMERIC 0
+        END POLICY
+
+        POLICY !!EnableAuthNegotiatePort_Policy
+          #if version >= 4
+            SUPPORTED !!SUPPORTED_WINXPSP2
+          #endif
+          EXPLAIN !!EnableAuthNegotiatePort_Explain
+          VALUENAME "EnableAuthNegotiatePort"
+          VALUEON NUMERIC 1
+          VALUEOFF NUMERIC 0
+        END POLICY
+
+        POLICY !!AuthServerWhitelist_Policy
+          #if version >= 4
+            SUPPORTED !!SUPPORTED_WINXPSP2
+          #endif
+          EXPLAIN !!AuthServerWhitelist_Explain
+
+          PART !!AuthServerWhitelist_Part  EDITTEXT
+            VALUENAME "AuthServerWhitelist"
+          END PART
+        END POLICY
+
+        POLICY !!AuthNegotiateDelegateWhitelist_Policy
+          #if version >= 4
+            SUPPORTED !!SUPPORTED_WINXPSP2
+          #endif
+          EXPLAIN !!AuthNegotiateDelegateWhitelist_Explain
+
+          PART !!AuthNegotiateDelegateWhitelist_Part  EDITTEXT
+            VALUENAME "AuthNegotiateDelegateWhitelist"
+          END PART
+        END POLICY
+
+        POLICY !!AllowCrossOriginAuthPrompt_Policy
+          #if version >= 4
+            SUPPORTED !!SUPPORTED_WINXPSP2
+          #endif
+          EXPLAIN !!AllowCrossOriginAuthPrompt_Explain
+          VALUENAME "AllowCrossOriginAuthPrompt"
+          VALUEON NUMERIC 1
+          VALUEOFF NUMERIC 0
+        END POLICY
+
+      END CATEGORY
+
+      CATEGORY !!Homepage_Category
+        POLICY !!HomepageLocation_Policy
+          #if version >= 4
+            SUPPORTED !!SUPPORTED_WINXPSP2
+          #endif
+          EXPLAIN !!HomepageLocation_Explain
+
+          PART !!HomepageLocation_Part  EDITTEXT
+            VALUENAME "HomepageLocation"
+          END PART
+        END POLICY
+
+        POLICY !!HomepageIsNewTabPage_Policy
+          #if version >= 4
+            SUPPORTED !!SUPPORTED_WINXPSP2
+          #endif
+          EXPLAIN !!HomepageIsNewTabPage_Explain
+          VALUENAME "HomepageIsNewTabPage"
+          VALUEON NUMERIC 1
+          VALUEOFF NUMERIC 0
+        END POLICY
+
+      END CATEGORY
+
+      CATEGORY !!Proxy_Category
+        POLICY !!ProxyMode_Policy
+          #if version >= 4
+            SUPPORTED !!SUPPORTED_WINXPSP2
+          #endif
+          EXPLAIN !!ProxyMode_Explain
+
+          PART !!ProxyMode_Part  DROPDOWNLIST
+            VALUENAME "ProxyMode"
+            ITEMLIST
+              NAME !!ProxyDisabled_DropDown VALUE "direct"
+              NAME !!ProxyAutoDetect_DropDown VALUE "auto_detect"
+              NAME !!ProxyPacScript_DropDown VALUE "pac_script"
+              NAME !!ProxyFixedServers_DropDown VALUE "fixed_servers"
+              NAME !!ProxyUseSystem_DropDown VALUE "system"
+            END ITEMLIST
+          END PART
+        END POLICY
+
+        POLICY !!ProxyServer_Policy
+          #if version >= 4
+            SUPPORTED !!SUPPORTED_WINXPSP2
+          #endif
+          EXPLAIN !!ProxyServer_Explain
+
+          PART !!ProxyServer_Part  EDITTEXT
+            VALUENAME "ProxyServer"
+          END PART
+        END POLICY
+
+        POLICY !!ProxyPacUrl_Policy
+          #if version >= 4
+            SUPPORTED !!SUPPORTED_WINXPSP2
+          #endif
+          EXPLAIN !!ProxyPacUrl_Explain
+
+          PART !!ProxyPacUrl_Part  EDITTEXT
+            VALUENAME "ProxyPacUrl"
+          END PART
+        END POLICY
+
+        POLICY !!ProxyBypassList_Policy
+          #if version >= 4
+            SUPPORTED !!SUPPORTED_WINXPSP2
+          #endif
+          EXPLAIN !!ProxyBypassList_Explain
+
+          PART !!ProxyBypassList_Part  EDITTEXT
+            VALUENAME "ProxyBypassList"
+          END PART
+        END POLICY
+
+      END CATEGORY
+
+      CATEGORY !!ChromeFrameContentTypes_Category
+        POLICY !!ChromeFrameContentTypes_Policy
+          #if version >= 4
+            SUPPORTED !!SUPPORTED_WINXPSP2
+          #endif
+          EXPLAIN !!ChromeFrameContentTypes_Explain
+
+          PART !!ChromeFrameContentTypes_Part  LISTBOX
+            KEYNAME "Software\Policies\Google\Chrome\ChromeFrameContentTypes"
+            VALUEPREFIX ""
+          END PART
+        END POLICY
+
+      END CATEGORY
+
+      CATEGORY !!ContentSettings_Category
+        POLICY !!DefaultCookiesSetting_Policy
+          #if version >= 4
+            SUPPORTED !!SUPPORTED_WINXPSP2
+          #endif
+          EXPLAIN !!DefaultCookiesSetting_Explain
+
+          PART !!DefaultCookiesSetting_Part  DROPDOWNLIST
+            VALUENAME "DefaultCookiesSetting"
+            ITEMLIST
+              NAME !!AllowCookies_DropDown VALUE NUMERIC 1
+              NAME !!BlockCookies_DropDown VALUE NUMERIC 2
+            END ITEMLIST
+          END PART
+        END POLICY
+
+        POLICY !!DefaultImagesSetting_Policy
+          #if version >= 4
+            SUPPORTED !!SUPPORTED_WINXPSP2
+          #endif
+          EXPLAIN !!DefaultImagesSetting_Explain
+
+          PART !!DefaultImagesSetting_Part  DROPDOWNLIST
+            VALUENAME "DefaultImagesSetting"
+            ITEMLIST
+              NAME !!AllowImages_DropDown VALUE NUMERIC 1
+              NAME !!BlockImages_DropDown VALUE NUMERIC 2
+            END ITEMLIST
+          END PART
+        END POLICY
+
+        POLICY !!DefaultJavaScriptSetting_Policy
+          #if version >= 4
+            SUPPORTED !!SUPPORTED_WINXPSP2
+          #endif
+          EXPLAIN !!DefaultJavaScriptSetting_Explain
+
+          PART !!DefaultJavaScriptSetting_Part  DROPDOWNLIST
+            VALUENAME "DefaultJavaScriptSetting"
+            ITEMLIST
+              NAME !!AllowJavaScript_DropDown VALUE NUMERIC 1
+              NAME !!BlockJavaScript_DropDown VALUE NUMERIC 2
+            END ITEMLIST
+          END PART
+        END POLICY
+
+        POLICY !!DefaultPluginsSetting_Policy
+          #if version >= 4
+            SUPPORTED !!SUPPORTED_WINXPSP2
+          #endif
+          EXPLAIN !!DefaultPluginsSetting_Explain
+
+          PART !!DefaultPluginsSetting_Part  DROPDOWNLIST
+            VALUENAME "DefaultPluginsSetting"
+            ITEMLIST
+              NAME !!AllowPlugins_DropDown VALUE NUMERIC 1
+              NAME !!BlockPlugins_DropDown VALUE NUMERIC 2
+            END ITEMLIST
+          END PART
+        END POLICY
+
+        POLICY !!DefaultPopupsSetting_Policy
+          #if version >= 4
+            SUPPORTED !!SUPPORTED_WINXPSP2
+          #endif
+          EXPLAIN !!DefaultPopupsSetting_Explain
+
+          PART !!DefaultPopupsSetting_Part  DROPDOWNLIST
+            VALUENAME "DefaultPopupsSetting"
+            ITEMLIST
+              NAME !!AllowPopups_DropDown VALUE NUMERIC 1
+              NAME !!BlockPopups_DropDown VALUE NUMERIC 2
+            END ITEMLIST
+          END PART
+        END POLICY
+
+        POLICY !!DefaultNotificationsSetting_Policy
+          #if version >= 4
+            SUPPORTED !!SUPPORTED_WINXPSP2
+          #endif
+          EXPLAIN !!DefaultNotificationsSetting_Explain
+
+          PART !!DefaultNotificationsSetting_Part  DROPDOWNLIST
+            VALUENAME "DefaultNotificationsSetting"
+            ITEMLIST
+              NAME !!AllowNotifications_DropDown VALUE NUMERIC 1
+              NAME !!BlockNotifications_DropDown VALUE NUMERIC 2
+              NAME !!AskNotifications_DropDown VALUE NUMERIC 3
+            END ITEMLIST
+          END PART
+        END POLICY
+
+        POLICY !!DefaultGeolocationSetting_Policy
+          #if version >= 4
+            SUPPORTED !!SUPPORTED_WINXPSP2
+          #endif
+          EXPLAIN !!DefaultGeolocationSetting_Explain
+
+          PART !!DefaultGeolocationSetting_Part  DROPDOWNLIST
+            VALUENAME "DefaultGeolocationSetting"
+            ITEMLIST
+              NAME !!AllowGeolocation_DropDown VALUE NUMERIC 1
+              NAME !!BlockGeolocation_DropDown VALUE NUMERIC 2
+              NAME !!AskGeolocation_DropDown VALUE NUMERIC 3
+            END ITEMLIST
+          END PART
+        END POLICY
+
+        POLICY !!AutoSelectCertificateForUrls_Policy
+          #if version >= 4
+            SUPPORTED !!SUPPORTED_WINXPSP2
+          #endif
+          EXPLAIN !!AutoSelectCertificateForUrls_Explain
+
+          PART !!AutoSelectCertificateForUrls_Part  LISTBOX
+            KEYNAME "Software\Policies\Google\Chrome\AutoSelectCertificateForUrls"
+            VALUEPREFIX ""
+          END PART
+        END POLICY
+
+        POLICY !!CookiesAllowedForUrls_Policy
+          #if version >= 4
+            SUPPORTED !!SUPPORTED_WINXPSP2
+          #endif
+          EXPLAIN !!CookiesAllowedForUrls_Explain
+
+          PART !!CookiesAllowedForUrls_Part  LISTBOX
+            KEYNAME "Software\Policies\Google\Chrome\CookiesAllowedForUrls"
+            VALUEPREFIX ""
+          END PART
+        END POLICY
+
+        POLICY !!CookiesBlockedForUrls_Policy
+          #if version >= 4
+            SUPPORTED !!SUPPORTED_WINXPSP2
+          #endif
+          EXPLAIN !!CookiesBlockedForUrls_Explain
+
+          PART !!CookiesBlockedForUrls_Part  LISTBOX
+            KEYNAME "Software\Policies\Google\Chrome\CookiesBlockedForUrls"
+            VALUEPREFIX ""
+          END PART
+        END POLICY
+
+        POLICY !!CookiesSessionOnlyForUrls_Policy
+          #if version >= 4
+            SUPPORTED !!SUPPORTED_WINXPSP2
+          #endif
+          EXPLAIN !!CookiesSessionOnlyForUrls_Explain
+
+          PART !!CookiesSessionOnlyForUrls_Part  LISTBOX
+            KEYNAME "Software\Policies\Google\Chrome\CookiesSessionOnlyForUrls"
+            VALUEPREFIX ""
+          END PART
+        END POLICY
+
+        POLICY !!ImagesAllowedForUrls_Policy
+          #if version >= 4
+            SUPPORTED !!SUPPORTED_WINXPSP2
+          #endif
+          EXPLAIN !!ImagesAllowedForUrls_Explain
+
+          PART !!ImagesAllowedForUrls_Part  LISTBOX
+            KEYNAME "Software\Policies\Google\Chrome\ImagesAllowedForUrls"
+            VALUEPREFIX ""
+          END PART
+        END POLICY
+
+        POLICY !!ImagesBlockedForUrls_Policy
+          #if version >= 4
+            SUPPORTED !!SUPPORTED_WINXPSP2
+          #endif
+          EXPLAIN !!ImagesBlockedForUrls_Explain
+
+          PART !!ImagesBlockedForUrls_Part  LISTBOX
+            KEYNAME "Software\Policies\Google\Chrome\ImagesBlockedForUrls"
+            VALUEPREFIX ""
+          END PART
+        END POLICY
+
+        POLICY !!JavaScriptAllowedForUrls_Policy
+          #if version >= 4
+            SUPPORTED !!SUPPORTED_WINXPSP2
+          #endif
+          EXPLAIN !!JavaScriptAllowedForUrls_Explain
+
+          PART !!JavaScriptAllowedForUrls_Part  LISTBOX
+            KEYNAME "Software\Policies\Google\Chrome\JavaScriptAllowedForUrls"
+            VALUEPREFIX ""
+          END PART
+        END POLICY
+
+        POLICY !!JavaScriptBlockedForUrls_Policy
+          #if version >= 4
+            SUPPORTED !!SUPPORTED_WINXPSP2
+          #endif
+          EXPLAIN !!JavaScriptBlockedForUrls_Explain
+
+          PART !!JavaScriptBlockedForUrls_Part  LISTBOX
+            KEYNAME "Software\Policies\Google\Chrome\JavaScriptBlockedForUrls"
+            VALUEPREFIX ""
+          END PART
+        END POLICY
+
+        POLICY !!PluginsAllowedForUrls_Policy
+          #if version >= 4
+            SUPPORTED !!SUPPORTED_WINXPSP2
+          #endif
+          EXPLAIN !!PluginsAllowedForUrls_Explain
+
+          PART !!PluginsAllowedForUrls_Part  LISTBOX
+            KEYNAME "Software\Policies\Google\Chrome\PluginsAllowedForUrls"
+            VALUEPREFIX ""
+          END PART
+        END POLICY
+
+        POLICY !!PluginsBlockedForUrls_Policy
+          #if version >= 4
+            SUPPORTED !!SUPPORTED_WINXPSP2
+          #endif
+          EXPLAIN !!PluginsBlockedForUrls_Explain
+
+          PART !!PluginsBlockedForUrls_Part  LISTBOX
+            KEYNAME "Software\Policies\Google\Chrome\PluginsBlockedForUrls"
+            VALUEPREFIX ""
+          END PART
+        END POLICY
+
+        POLICY !!PopupsAllowedForUrls_Policy
+          #if version >= 4
+            SUPPORTED !!SUPPORTED_WINXPSP2
+          #endif
+          EXPLAIN !!PopupsAllowedForUrls_Explain
+
+          PART !!PopupsAllowedForUrls_Part  LISTBOX
+            KEYNAME "Software\Policies\Google\Chrome\PopupsAllowedForUrls"
+            VALUEPREFIX ""
+          END PART
+        END POLICY
+
+        POLICY !!PopupsBlockedForUrls_Policy
+          #if version >= 4
+            SUPPORTED !!SUPPORTED_WINXPSP2
+          #endif
+          EXPLAIN !!PopupsBlockedForUrls_Explain
+
+          PART !!PopupsBlockedForUrls_Part  LISTBOX
+            KEYNAME "Software\Policies\Google\Chrome\PopupsBlockedForUrls"
+            VALUEPREFIX ""
+          END PART
+        END POLICY
+
+        POLICY !!NotificationsAllowedForUrls_Policy
+          #if version >= 4
+            SUPPORTED !!SUPPORTED_WINXPSP2
+          #endif
+          EXPLAIN !!NotificationsAllowedForUrls_Explain
+
+          PART !!NotificationsAllowedForUrls_Part  LISTBOX
+            KEYNAME "Software\Policies\Google\Chrome\NotificationsAllowedForUrls"
+            VALUEPREFIX ""
+          END PART
+        END POLICY
+
+        POLICY !!NotificationsBlockedForUrls_Policy
+          #if version >= 4
+            SUPPORTED !!SUPPORTED_WINXPSP2
+          #endif
+          EXPLAIN !!NotificationsBlockedForUrls_Explain
+
+          PART !!NotificationsBlockedForUrls_Part  LISTBOX
+            KEYNAME "Software\Policies\Google\Chrome\NotificationsBlockedForUrls"
+            VALUEPREFIX ""
+          END PART
+        END POLICY
+
+      END CATEGORY
+
+      CATEGORY !!RestoreOnStartupGroup_Category
+        POLICY !!RestoreOnStartup_Policy
+          #if version >= 4
+            SUPPORTED !!SUPPORTED_WINXPSP2
+          #endif
+          EXPLAIN !!RestoreOnStartup_Explain
+
+          PART !!RestoreOnStartup_Part  DROPDOWNLIST
+            VALUENAME "RestoreOnStartup"
+            ITEMLIST
+              NAME !!RestoreOnStartupIsNone_DropDown VALUE NUMERIC 0
+              NAME !!RestoreOnStartupIsLastSession_DropDown VALUE NUMERIC 1
+              NAME !!RestoreOnStartupIsURLs_DropDown VALUE NUMERIC 4
+            END ITEMLIST
+          END PART
+        END POLICY
+
+        POLICY !!RestoreOnStartupURLs_Policy
+          #if version >= 4
+            SUPPORTED !!SUPPORTED_WINXPSP2
+          #endif
+          EXPLAIN !!RestoreOnStartupURLs_Explain
+
+          PART !!RestoreOnStartupURLs_Part  LISTBOX
+            KEYNAME "Software\Policies\Google\Chrome\RestoreOnStartupURLs"
+            VALUEPREFIX ""
+          END PART
+        END POLICY
+
+      END CATEGORY
+
+      CATEGORY !!PasswordManager_Category
+        POLICY !!PasswordManagerEnabled_Policy
+          #if version >= 4
+            SUPPORTED !!SUPPORTED_WINXPSP2
+          #endif
+          EXPLAIN !!PasswordManagerEnabled_Explain
+          VALUENAME "PasswordManagerEnabled"
+          VALUEON NUMERIC 1
+          VALUEOFF NUMERIC 0
+        END POLICY
+
+        POLICY !!PasswordManagerAllowShowPasswords_Policy
+          #if version >= 4
+            SUPPORTED !!SUPPORTED_WINXPSP2
+          #endif
+          EXPLAIN !!PasswordManagerAllowShowPasswords_Explain
+          VALUENAME "PasswordManagerAllowShowPasswords"
+          VALUEON NUMERIC 1
+          VALUEOFF NUMERIC 0
+        END POLICY
+
+      END CATEGORY
+
+      CATEGORY !!Extensions_Category
+        POLICY !!ExtensionInstallBlacklist_Policy
+          #if version >= 4
+            SUPPORTED !!SUPPORTED_WINXPSP2
+          #endif
+          EXPLAIN !!ExtensionInstallBlacklist_Explain
+
+          PART !!ExtensionInstallBlacklist_Part  LISTBOX
+            KEYNAME "Software\Policies\Google\Chrome\ExtensionInstallBlacklist"
+            VALUEPREFIX ""
+          END PART
+        END POLICY
+
+        POLICY !!ExtensionInstallWhitelist_Policy
+          #if version >= 4
+            SUPPORTED !!SUPPORTED_WINXPSP2
+          #endif
+          EXPLAIN !!ExtensionInstallWhitelist_Explain
+
+          PART !!ExtensionInstallWhitelist_Part  LISTBOX
+            KEYNAME "Software\Policies\Google\Chrome\ExtensionInstallWhitelist"
+            VALUEPREFIX ""
+          END PART
+        END POLICY
+
+        POLICY !!ExtensionInstallForcelist_Policy
+          #if version >= 4
+            SUPPORTED !!SUPPORTED_WINXPSP2
+          #endif
+          EXPLAIN !!ExtensionInstallForcelist_Explain
+
+          PART !!ExtensionInstallForcelist_Part  LISTBOX
+            KEYNAME "Software\Policies\Google\Chrome\ExtensionInstallForcelist"
+            VALUEPREFIX ""
+          END PART
+        END POLICY
+
+      END CATEGORY
+
+      CATEGORY !!RemoteAccess_Category
+        POLICY !!RemoteAccessHostFirewallTraversal_Policy
+          #if version >= 4
+            SUPPORTED !!SUPPORTED_WINXPSP2
+          #endif
+          EXPLAIN !!RemoteAccessHostFirewallTraversal_Explain
+          VALUENAME "RemoteAccessHostFirewallTraversal"
+          VALUEON NUMERIC 1
+          VALUEOFF NUMERIC 0
+        END POLICY
+
+      END CATEGORY
+
+      CATEGORY !!ChromeFrameRendererSettings_Category
+        POLICY !!ChromeFrameRendererSettings_Policy
+          #if version >= 4
+            SUPPORTED !!SUPPORTED_WINXPSP2
+          #endif
+          EXPLAIN !!ChromeFrameRendererSettings_Explain
+
+          PART !!ChromeFrameRendererSettings_Part  DROPDOWNLIST
+            VALUENAME "ChromeFrameRendererSettings"
+            ITEMLIST
+              NAME !!RenderInHost_DropDown VALUE NUMERIC 0
+              NAME !!RenderInChromeFrame_DropDown VALUE NUMERIC 1
+            END ITEMLIST
+          END PART
+        END POLICY
+
+        POLICY !!RenderInChromeFrameList_Policy
+          #if version >= 4
+            SUPPORTED !!SUPPORTED_WINXPSP2
+          #endif
+          EXPLAIN !!RenderInChromeFrameList_Explain
+
+          PART !!RenderInChromeFrameList_Part  LISTBOX
+            KEYNAME "Software\Policies\Google\Chrome\RenderInChromeFrameList"
+            VALUEPREFIX ""
+          END PART
+        END POLICY
+
+        POLICY !!RenderInHostList_Policy
+          #if version >= 4
+            SUPPORTED !!SUPPORTED_WINXPSP2
+          #endif
+          EXPLAIN !!RenderInHostList_Explain
+
+          PART !!RenderInHostList_Part  LISTBOX
+            KEYNAME "Software\Policies\Google\Chrome\RenderInHostList"
+            VALUEPREFIX ""
+          END PART
+        END POLICY
+
+      END CATEGORY
+
+      CATEGORY !!DefaultSearchProvider_Category
+        POLICY !!DefaultSearchProviderEnabled_Policy
+          #if version >= 4
+            SUPPORTED !!SUPPORTED_WINXPSP2
+          #endif
+          EXPLAIN !!DefaultSearchProviderEnabled_Explain
+          VALUENAME "DefaultSearchProviderEnabled"
+          VALUEON NUMERIC 1
+          VALUEOFF NUMERIC 0
+        END POLICY
+
+        POLICY !!DefaultSearchProviderName_Policy
+          #if version >= 4
+            SUPPORTED !!SUPPORTED_WINXPSP2
+          #endif
+          EXPLAIN !!DefaultSearchProviderName_Explain
+
+          PART !!DefaultSearchProviderName_Part  EDITTEXT
+            VALUENAME "DefaultSearchProviderName"
+          END PART
+        END POLICY
+
+        POLICY !!DefaultSearchProviderKeyword_Policy
+          #if version >= 4
+            SUPPORTED !!SUPPORTED_WINXPSP2
+          #endif
+          EXPLAIN !!DefaultSearchProviderKeyword_Explain
+
+          PART !!DefaultSearchProviderKeyword_Part  EDITTEXT
+            VALUENAME "DefaultSearchProviderKeyword"
+          END PART
+        END POLICY
+
+        POLICY !!DefaultSearchProviderSearchURL_Policy
+          #if version >= 4
+            SUPPORTED !!SUPPORTED_WINXPSP2
+          #endif
+          EXPLAIN !!DefaultSearchProviderSearchURL_Explain
+
+          PART !!DefaultSearchProviderSearchURL_Part  EDITTEXT
+            VALUENAME "DefaultSearchProviderSearchURL"
+          END PART
+        END POLICY
+
+        POLICY !!DefaultSearchProviderSuggestURL_Policy
+          #if version >= 4
+            SUPPORTED !!SUPPORTED_WINXPSP2
+          #endif
+          EXPLAIN !!DefaultSearchProviderSuggestURL_Explain
+
+          PART !!DefaultSearchProviderSuggestURL_Part  EDITTEXT
+            VALUENAME "DefaultSearchProviderSuggestURL"
+          END PART
+        END POLICY
+
+        POLICY !!DefaultSearchProviderInstantURL_Policy
+          #if version >= 4
+            SUPPORTED !!SUPPORTED_WINXPSP2
+          #endif
+          EXPLAIN !!DefaultSearchProviderInstantURL_Explain
+
+          PART !!DefaultSearchProviderInstantURL_Part  EDITTEXT
+            VALUENAME "DefaultSearchProviderInstantURL"
+          END PART
+        END POLICY
+
+        POLICY !!DefaultSearchProviderIconURL_Policy
+          #if version >= 4
+            SUPPORTED !!SUPPORTED_WINXPSP2
+          #endif
+          EXPLAIN !!DefaultSearchProviderIconURL_Explain
+
+          PART !!DefaultSearchProviderIconURL_Part  EDITTEXT
+            VALUENAME "DefaultSearchProviderIconURL"
+          END PART
+        END POLICY
+
+        POLICY !!DefaultSearchProviderEncodings_Policy
+          #if version >= 4
+            SUPPORTED !!SUPPORTED_WINXPSP2
+          #endif
+          EXPLAIN !!DefaultSearchProviderEncodings_Explain
+
+          PART !!DefaultSearchProviderEncodings_Part  LISTBOX
+            KEYNAME "Software\Policies\Google\Chrome\DefaultSearchProviderEncodings"
+            VALUEPREFIX ""
+          END PART
+        END POLICY
+
+      END CATEGORY
+
+      POLICY !!AllowFileSelectionDialogs_Policy
+        #if version >= 4
+          SUPPORTED !!SUPPORTED_WINXPSP2
+        #endif
+        EXPLAIN !!AllowFileSelectionDialogs_Explain
+        VALUENAME "AllowFileSelectionDialogs"
+        VALUEON NUMERIC 1
+        VALUEOFF NUMERIC 0
+      END POLICY
+
+      POLICY !!AllowOutdatedPlugins_Policy
+        #if version >= 4
+          SUPPORTED !!SUPPORTED_WINXPSP2
+        #endif
+        EXPLAIN !!AllowOutdatedPlugins_Explain
+        VALUENAME "AllowOutdatedPlugins"
+        VALUEON NUMERIC 1
+        VALUEOFF NUMERIC 0
+      END POLICY
+
+      POLICY !!AlternateErrorPagesEnabled_Policy
+        #if version >= 4
+          SUPPORTED !!SUPPORTED_WINXPSP2
+        #endif
+        EXPLAIN !!AlternateErrorPagesEnabled_Explain
+        VALUENAME "AlternateErrorPagesEnabled"
+        VALUEON NUMERIC 1
+        VALUEOFF NUMERIC 0
+      END POLICY
+
+      POLICY !!AlwaysAuthorizePlugins_Policy
+        #if version >= 4
+          SUPPORTED !!SUPPORTED_WINXPSP2
+        #endif
+        EXPLAIN !!AlwaysAuthorizePlugins_Explain
+        VALUENAME "AlwaysAuthorizePlugins"
+        VALUEON NUMERIC 1
+        VALUEOFF NUMERIC 0
+      END POLICY
+
+      POLICY !!ApplicationLocaleValue_Policy
+        #if version >= 4
+          SUPPORTED !!SUPPORTED_WINXPSP2
+        #endif
+        EXPLAIN !!ApplicationLocaleValue_Explain
+
+        PART !!ApplicationLocaleValue_Part  EDITTEXT
+          VALUENAME "ApplicationLocaleValue"
+        END PART
+      END POLICY
+
+      POLICY !!AutoFillEnabled_Policy
+        #if version >= 4
+          SUPPORTED !!SUPPORTED_WINXPSP2
+        #endif
+        EXPLAIN !!AutoFillEnabled_Explain
+        VALUENAME "AutoFillEnabled"
+        VALUEON NUMERIC 1
+        VALUEOFF NUMERIC 0
+      END POLICY
+
+      POLICY !!BackgroundModeEnabled_Policy
+        #if version >= 4
+          SUPPORTED !!SUPPORTED_WINXPSP2
+        #endif
+        EXPLAIN !!BackgroundModeEnabled_Explain
+        VALUENAME "BackgroundModeEnabled"
+        VALUEON NUMERIC 1
+        VALUEOFF NUMERIC 0
+      END POLICY
+
+      POLICY !!BlockThirdPartyCookies_Policy
+        #if version >= 4
+          SUPPORTED !!SUPPORTED_WINXPSP2
+        #endif
+        EXPLAIN !!BlockThirdPartyCookies_Explain
+        VALUENAME "BlockThirdPartyCookies"
+        VALUEON NUMERIC 1
+        VALUEOFF NUMERIC 0
+      END POLICY
+
+      POLICY !!BookmarkBarEnabled_Policy
+        #if version >= 4
+          SUPPORTED !!SUPPORTED_WINXPSP2
+        #endif
+        EXPLAIN !!BookmarkBarEnabled_Explain
+        VALUENAME "BookmarkBarEnabled"
+        VALUEON NUMERIC 1
+        VALUEOFF NUMERIC 0
+      END POLICY
+
+      POLICY !!ClearSiteDataOnExit_Policy
+        #if version >= 4
+          SUPPORTED !!SUPPORTED_WINXPSP2
+        #endif
+        EXPLAIN !!ClearSiteDataOnExit_Explain
+        VALUENAME "ClearSiteDataOnExit"
+        VALUEON NUMERIC 1
+        VALUEOFF NUMERIC 0
+      END POLICY
+
+      POLICY !!CloudPrintProxyEnabled_Policy
+        #if version >= 4
+          SUPPORTED !!SUPPORTED_WINXPSP2
+        #endif
+        EXPLAIN !!CloudPrintProxyEnabled_Explain
+        VALUENAME "CloudPrintProxyEnabled"
+        VALUEON NUMERIC 1
+        VALUEOFF NUMERIC 0
+      END POLICY
+
+      POLICY !!CloudPrintSubmitEnabled_Policy
+        #if version >= 4
+          SUPPORTED !!SUPPORTED_WINXPSP2
+        #endif
+        EXPLAIN !!CloudPrintSubmitEnabled_Explain
+        VALUENAME "CloudPrintSubmitEnabled"
+        VALUEON NUMERIC 1
+        VALUEOFF NUMERIC 0
+      END POLICY
+
+      POLICY !!DefaultBrowserSettingEnabled_Policy
+        #if version >= 4
+          SUPPORTED !!SUPPORTED_WINXPSP2
+        #endif
+        EXPLAIN !!DefaultBrowserSettingEnabled_Explain
+        VALUENAME "DefaultBrowserSettingEnabled"
+        VALUEON NUMERIC 1
+        VALUEOFF NUMERIC 0
+      END POLICY
+
+      POLICY !!DeveloperToolsDisabled_Policy
+        #if version >= 4
+          SUPPORTED !!SUPPORTED_WINXPSP2
+        #endif
+        EXPLAIN !!DeveloperToolsDisabled_Explain
+        VALUENAME "DeveloperToolsDisabled"
+        VALUEON NUMERIC 1
+        VALUEOFF NUMERIC 0
+      END POLICY
+
+      POLICY !!Disable3DAPIs_Policy
+        #if version >= 4
+          SUPPORTED !!SUPPORTED_WINXPSP2
+        #endif
+        EXPLAIN !!Disable3DAPIs_Explain
+        VALUENAME "Disable3DAPIs"
+        VALUEON NUMERIC 1
+        VALUEOFF NUMERIC 0
+      END POLICY
+
+      POLICY !!DisablePluginFinder_Policy
+        #if version >= 4
+          SUPPORTED !!SUPPORTED_WINXPSP2
+        #endif
+        EXPLAIN !!DisablePluginFinder_Explain
+        VALUENAME "DisablePluginFinder"
+        VALUEON NUMERIC 1
+        VALUEOFF NUMERIC 0
+      END POLICY
+
+      POLICY !!DisablePrintPreview_Policy
+        #if version >= 4
+          SUPPORTED !!SUPPORTED_WINXPSP2
+        #endif
+        EXPLAIN !!DisablePrintPreview_Explain
+        VALUENAME "DisablePrintPreview"
+        VALUEON NUMERIC 1
+        VALUEOFF NUMERIC 0
+      END POLICY
+
+      POLICY !!DisableSSLRecordSplitting_Policy
+        #if version >= 4
+          SUPPORTED !!SUPPORTED_WINXPSP2
+        #endif
+        EXPLAIN !!DisableSSLRecordSplitting_Explain
+        VALUENAME "DisableSSLRecordSplitting"
+        VALUEON NUMERIC 1
+        VALUEOFF NUMERIC 0
+      END POLICY
+
+      POLICY !!DisableSpdy_Policy
+        #if version >= 4
+          SUPPORTED !!SUPPORTED_WINXPSP2
+        #endif
+        EXPLAIN !!DisableSpdy_Explain
+        VALUENAME "DisableSpdy"
+        VALUEON NUMERIC 1
+        VALUEOFF NUMERIC 0
+      END POLICY
+
+      POLICY !!DisabledPlugins_Policy
+        #if version >= 4
+          SUPPORTED !!SUPPORTED_WINXPSP2
+        #endif
+        EXPLAIN !!DisabledPlugins_Explain
+
+        PART !!DisabledPlugins_Part  LISTBOX
+          KEYNAME "Software\Policies\Google\Chrome\DisabledPlugins"
+          VALUEPREFIX ""
+        END PART
+      END POLICY
+
+      POLICY !!DisabledPluginsExceptions_Policy
+        #if version >= 4
+          SUPPORTED !!SUPPORTED_WINXPSP2
+        #endif
+        EXPLAIN !!DisabledPluginsExceptions_Explain
+
+        PART !!DisabledPluginsExceptions_Part  LISTBOX
+          KEYNAME "Software\Policies\Google\Chrome\DisabledPluginsExceptions"
+          VALUEPREFIX ""
+        END PART
+      END POLICY
+
+      POLICY !!DisabledSchemes_Policy
+        #if version >= 4
+          SUPPORTED !!SUPPORTED_WINXPSP2
+        #endif
+        EXPLAIN !!DisabledSchemes_Explain
+
+        PART !!DisabledSchemes_Part  LISTBOX
+          KEYNAME "Software\Policies\Google\Chrome\DisabledSchemes"
+          VALUEPREFIX ""
+        END PART
+      END POLICY
+
+      POLICY !!DiskCacheDir_Policy
+        #if version >= 4
+          SUPPORTED !!SUPPORTED_WINXPSP2
+        #endif
+        EXPLAIN !!DiskCacheDir_Explain
+
+        PART !!DiskCacheDir_Part  EDITTEXT
+          VALUENAME "DiskCacheDir"
+        END PART
+      END POLICY
+
+      POLICY !!DiskCacheSize_Policy
+        #if version >= 4
+          SUPPORTED !!SUPPORTED_WINXPSP2
+        #endif
+        EXPLAIN !!DiskCacheSize_Explain
+
+        PART !!DiskCacheSize_Part  NUMERIC
+          VALUENAME "DiskCacheSize"
+        END PART
+      END POLICY
+
+      POLICY !!DnsPrefetchingEnabled_Policy
+        #if version >= 4
+          SUPPORTED !!SUPPORTED_WINXPSP2
+        #endif
+        EXPLAIN !!DnsPrefetchingEnabled_Explain
+        VALUENAME "DnsPrefetchingEnabled"
+        VALUEON NUMERIC 1
+        VALUEOFF NUMERIC 0
+      END POLICY
+
+      POLICY !!DownloadDirectory_Policy
+        #if version >= 4
+          SUPPORTED !!SUPPORTED_WINXPSP2
+        #endif
+        EXPLAIN !!DownloadDirectory_Explain
+
+        PART !!DownloadDirectory_Part  EDITTEXT
+          VALUENAME "DownloadDirectory"
+        END PART
+      END POLICY
+
+      POLICY !!EditBookmarksEnabled_Policy
+        #if version >= 4
+          SUPPORTED !!SUPPORTED_WINXPSP2
+        #endif
+        EXPLAIN !!EditBookmarksEnabled_Explain
+        VALUENAME "EditBookmarksEnabled"
+        VALUEON NUMERIC 1
+        VALUEOFF NUMERIC 0
+      END POLICY
+
+      POLICY !!EnableOnlineRevocationChecks_Policy
+        #if version >= 4
+          SUPPORTED !!SUPPORTED_WINXPSP2
+        #endif
+        EXPLAIN !!EnableOnlineRevocationChecks_Explain
+        VALUENAME "EnableOnlineRevocationChecks"
+        VALUEON NUMERIC 1
+        VALUEOFF NUMERIC 0
+      END POLICY
+
+      POLICY !!EnabledPlugins_Policy
+        #if version >= 4
+          SUPPORTED !!SUPPORTED_WINXPSP2
+        #endif
+        EXPLAIN !!EnabledPlugins_Explain
+
+        PART !!EnabledPlugins_Part  LISTBOX
+          KEYNAME "Software\Policies\Google\Chrome\EnabledPlugins"
+          VALUEPREFIX ""
+        END PART
+      END POLICY
+
+      POLICY !!EnterpriseWebStoreName_Policy
+        #if version >= 4
+          SUPPORTED !!SUPPORTED_WINXPSP2
+        #endif
+        EXPLAIN !!EnterpriseWebStoreName_Explain
+
+        PART !!EnterpriseWebStoreName_Part  EDITTEXT
+          VALUENAME "EnterpriseWebStoreName"
+        END PART
+      END POLICY
+
+      POLICY !!EnterpriseWebStoreURL_Policy
+        #if version >= 4
+          SUPPORTED !!SUPPORTED_WINXPSP2
+        #endif
+        EXPLAIN !!EnterpriseWebStoreURL_Explain
+
+        PART !!EnterpriseWebStoreURL_Part  EDITTEXT
+          VALUENAME "EnterpriseWebStoreURL"
+        END PART
+      END POLICY
+
+      POLICY !!GCFUserDataDir_Policy
+        #if version >= 4
+          SUPPORTED !!SUPPORTED_WINXPSP2
+        #endif
+        EXPLAIN !!GCFUserDataDir_Explain
+
+        PART !!GCFUserDataDir_Part  EDITTEXT
+          VALUENAME "GCFUserDataDir"
+        END PART
+      END POLICY
+
+      POLICY !!HideWebStorePromo_Policy
+        #if version >= 4
+          SUPPORTED !!SUPPORTED_WINXPSP2
+        #endif
+        EXPLAIN !!HideWebStorePromo_Explain
+        VALUENAME "HideWebStorePromo"
+        VALUEON NUMERIC 1
+        VALUEOFF NUMERIC 0
+      END POLICY
+
+      POLICY !!ImportBookmarks_Policy
+        #if version >= 4
+          SUPPORTED !!SUPPORTED_WINXPSP2
+        #endif
+        EXPLAIN !!ImportBookmarks_Explain
+        VALUENAME "ImportBookmarks"
+        VALUEON NUMERIC 1
+        VALUEOFF NUMERIC 0
+      END POLICY
+
+      POLICY !!ImportHistory_Policy
+        #if version >= 4
+          SUPPORTED !!SUPPORTED_WINXPSP2
+        #endif
+        EXPLAIN !!ImportHistory_Explain
+        VALUENAME "ImportHistory"
+        VALUEON NUMERIC 1
+        VALUEOFF NUMERIC 0
+      END POLICY
+
+      POLICY !!ImportHomepage_Policy
+        #if version >= 4
+          SUPPORTED !!SUPPORTED_WINXPSP2
+        #endif
+        EXPLAIN !!ImportHomepage_Explain
+        VALUENAME "ImportHomepage"
+        VALUEON NUMERIC 1
+        VALUEOFF NUMERIC 0
+      END POLICY
+
+      POLICY !!ImportSavedPasswords_Policy
+        #if version >= 4
+          SUPPORTED !!SUPPORTED_WINXPSP2
+        #endif
+        EXPLAIN !!ImportSavedPasswords_Explain
+        VALUENAME "ImportSavedPasswords"
+        VALUEON NUMERIC 1
+        VALUEOFF NUMERIC 0
+      END POLICY
+
+      POLICY !!ImportSearchEngine_Policy
+        #if version >= 4
+          SUPPORTED !!SUPPORTED_WINXPSP2
+        #endif
+        EXPLAIN !!ImportSearchEngine_Explain
+        VALUENAME "ImportSearchEngine"
+        VALUEON NUMERIC 1
+        VALUEOFF NUMERIC 0
+      END POLICY
+
+      POLICY !!IncognitoModeAvailability_Policy
+        #if version >= 4
+          SUPPORTED !!SUPPORTED_WINXPSP2
+        #endif
+        EXPLAIN !!IncognitoModeAvailability_Explain
+
+        PART !!IncognitoModeAvailability_Part  DROPDOWNLIST
+          VALUENAME "IncognitoModeAvailability"
+          ITEMLIST
+            NAME !!Enabled_DropDown VALUE NUMERIC 0
+            NAME !!Disabled_DropDown VALUE NUMERIC 1
+            NAME !!Forced_DropDown VALUE NUMERIC 2
+          END ITEMLIST
+        END PART
+      END POLICY
+
+      POLICY !!InstantEnabled_Policy
+        #if version >= 4
+          SUPPORTED !!SUPPORTED_WINXPSP2
+        #endif
+        EXPLAIN !!InstantEnabled_Explain
+        VALUENAME "InstantEnabled"
+        VALUEON NUMERIC 1
+        VALUEOFF NUMERIC 0
+      END POLICY
+
+      POLICY !!MaxConnectionsPerProxy_Policy
+        #if version >= 4
+          SUPPORTED !!SUPPORTED_WINXPSP2
+        #endif
+        EXPLAIN !!MaxConnectionsPerProxy_Explain
+
+        PART !!MaxConnectionsPerProxy_Part  NUMERIC
+          VALUENAME "MaxConnectionsPerProxy"
+        END PART
+      END POLICY
+
+      POLICY !!MediaCacheSize_Policy
+        #if version >= 4
+          SUPPORTED !!SUPPORTED_WINXPSP2
+        #endif
+        EXPLAIN !!MediaCacheSize_Explain
+
+        PART !!MediaCacheSize_Part  NUMERIC
+          VALUENAME "MediaCacheSize"
+        END PART
+      END POLICY
+
+      POLICY !!MetricsReportingEnabled_Policy
+        #if version >= 4
+          SUPPORTED !!SUPPORTED_WINXPSP2
+        #endif
+        EXPLAIN !!MetricsReportingEnabled_Explain
+        VALUENAME "MetricsReportingEnabled"
+        VALUEON NUMERIC 1
+        VALUEOFF NUMERIC 0
+      END POLICY
+
+      POLICY !!PrintingEnabled_Policy
+        #if version >= 4
+          SUPPORTED !!SUPPORTED_WINXPSP2
+        #endif
+        EXPLAIN !!PrintingEnabled_Explain
+        VALUENAME "PrintingEnabled"
+        VALUEON NUMERIC 1
+        VALUEOFF NUMERIC 0
+      END POLICY
+
+      POLICY !!SafeBrowsingEnabled_Policy
+        #if version >= 4
+          SUPPORTED !!SUPPORTED_WINXPSP2
+        #endif
+        EXPLAIN !!SafeBrowsingEnabled_Explain
+        VALUENAME "SafeBrowsingEnabled"
+        VALUEON NUMERIC 1
+        VALUEOFF NUMERIC 0
+      END POLICY
+
+      POLICY !!SavingBrowserHistoryDisabled_Policy
+        #if version >= 4
+          SUPPORTED !!SUPPORTED_WINXPSP2
+        #endif
+        EXPLAIN !!SavingBrowserHistoryDisabled_Explain
+        VALUENAME "SavingBrowserHistoryDisabled"
+        VALUEON NUMERIC 1
+        VALUEOFF NUMERIC 0
+      END POLICY
+
+      POLICY !!SearchSuggestEnabled_Policy
+        #if version >= 4
+          SUPPORTED !!SUPPORTED_WINXPSP2
+        #endif
+        EXPLAIN !!SearchSuggestEnabled_Explain
+        VALUENAME "SearchSuggestEnabled"
+        VALUEON NUMERIC 1
+        VALUEOFF NUMERIC 0
+      END POLICY
+
+      POLICY !!ShowHomeButton_Policy
+        #if version >= 4
+          SUPPORTED !!SUPPORTED_WINXPSP2
+        #endif
+        EXPLAIN !!ShowHomeButton_Explain
+        VALUENAME "ShowHomeButton"
+        VALUEON NUMERIC 1
+        VALUEOFF NUMERIC 0
+      END POLICY
+
+      POLICY !!SyncDisabled_Policy
+        #if version >= 4
+          SUPPORTED !!SUPPORTED_WINXPSP2
+        #endif
+        EXPLAIN !!SyncDisabled_Explain
+        VALUENAME "SyncDisabled"
+        VALUEON NUMERIC 1
+        VALUEOFF NUMERIC 0
+      END POLICY
+
+      POLICY !!TranslateEnabled_Policy
+        #if version >= 4
+          SUPPORTED !!SUPPORTED_WINXPSP2
+        #endif
+        EXPLAIN !!TranslateEnabled_Explain
+        VALUENAME "TranslateEnabled"
+        VALUEON NUMERIC 1
+        VALUEOFF NUMERIC 0
+      END POLICY
+
+      POLICY !!URLBlacklist_Policy
+        #if version >= 4
+          SUPPORTED !!SUPPORTED_WINXPSP2
+        #endif
+        EXPLAIN !!URLBlacklist_Explain
+
+        PART !!URLBlacklist_Part  LISTBOX
+          KEYNAME "Software\Policies\Google\Chrome\URLBlacklist"
+          VALUEPREFIX ""
+        END PART
+      END POLICY
+
+      POLICY !!URLWhitelist_Policy
+        #if version >= 4
+          SUPPORTED !!SUPPORTED_WINXPSP2
+        #endif
+        EXPLAIN !!URLWhitelist_Explain
+
+        PART !!URLWhitelist_Part  LISTBOX
+          KEYNAME "Software\Policies\Google\Chrome\URLWhitelist"
+          VALUEPREFIX ""
+        END PART
+      END POLICY
+
+      POLICY !!UserDataDir_Policy
+        #if version >= 4
+          SUPPORTED !!SUPPORTED_WINXPSP2
+        #endif
+        EXPLAIN !!UserDataDir_Explain
+
+        PART !!UserDataDir_Part  EDITTEXT
+          VALUENAME "UserDataDir"
+        END PART
+      END POLICY
+
+    END CATEGORY
+  END CATEGORY
+
+  CATEGORY !!google
+    CATEGORY !!googlechrome_recommended
+      KEYNAME "Software\Policies\Google\Chrome\Recommended"
+
+      CATEGORY !!Homepage_Category
+        POLICY !!HomepageLocation_Policy
+          #if version >= 4
+            SUPPORTED !!SUPPORTED_WINXPSP2
+          #endif
+          EXPLAIN !!HomepageLocation_Explain
+
+          PART !!HomepageLocation_Part  EDITTEXT
+            VALUENAME "HomepageLocation"
+          END PART
+        END POLICY
+
+        POLICY !!HomepageIsNewTabPage_Policy
+          #if version >= 4
+            SUPPORTED !!SUPPORTED_WINXPSP2
+          #endif
+          EXPLAIN !!HomepageIsNewTabPage_Explain
+          VALUENAME "HomepageIsNewTabPage"
+          VALUEON NUMERIC 1
+          VALUEOFF NUMERIC 0
+        END POLICY
+
+      END CATEGORY
+
+      CATEGORY !!RestoreOnStartupGroup_Category
+        POLICY !!RestoreOnStartup_Policy
+          #if version >= 4
+            SUPPORTED !!SUPPORTED_WINXPSP2
+          #endif
+          EXPLAIN !!RestoreOnStartup_Explain
+
+          PART !!RestoreOnStartup_Part  DROPDOWNLIST
+            VALUENAME "RestoreOnStartup"
+            ITEMLIST
+              NAME !!RestoreOnStartupIsNone_DropDown VALUE NUMERIC 0
+              NAME !!RestoreOnStartupIsLastSession_DropDown VALUE NUMERIC 1
+              NAME !!RestoreOnStartupIsURLs_DropDown VALUE NUMERIC 4
+            END ITEMLIST
+          END PART
+        END POLICY
+
+      END CATEGORY
+
+      CATEGORY !!PasswordManager_Category
+        POLICY !!PasswordManagerEnabled_Policy
+          #if version >= 4
+            SUPPORTED !!SUPPORTED_WINXPSP2
+          #endif
+          EXPLAIN !!PasswordManagerEnabled_Explain
+          VALUENAME "PasswordManagerEnabled"
+          VALUEON NUMERIC 1
+          VALUEOFF NUMERIC 0
+        END POLICY
+
+      END CATEGORY
+
+      POLICY !!AlternateErrorPagesEnabled_Policy
+        #if version >= 4
+          SUPPORTED !!SUPPORTED_WINXPSP2
+        #endif
+        EXPLAIN !!AlternateErrorPagesEnabled_Explain
+        VALUENAME "AlternateErrorPagesEnabled"
+        VALUEON NUMERIC 1
+        VALUEOFF NUMERIC 0
+      END POLICY
+
+      POLICY !!ApplicationLocaleValue_Policy
+        #if version >= 4
+          SUPPORTED !!SUPPORTED_WINXPSP2
+        #endif
+        EXPLAIN !!ApplicationLocaleValue_Explain
+
+        PART !!ApplicationLocaleValue_Part  EDITTEXT
+          VALUENAME "ApplicationLocaleValue"
+        END PART
+      END POLICY
+
+      POLICY !!AutoFillEnabled_Policy
+        #if version >= 4
+          SUPPORTED !!SUPPORTED_WINXPSP2
+        #endif
+        EXPLAIN !!AutoFillEnabled_Explain
+        VALUENAME "AutoFillEnabled"
+        VALUEON NUMERIC 1
+        VALUEOFF NUMERIC 0
+      END POLICY
+
+      POLICY !!BackgroundModeEnabled_Policy
+        #if version >= 4
+          SUPPORTED !!SUPPORTED_WINXPSP2
+        #endif
+        EXPLAIN !!BackgroundModeEnabled_Explain
+        VALUENAME "BackgroundModeEnabled"
+        VALUEON NUMERIC 1
+        VALUEOFF NUMERIC 0
+      END POLICY
+
+      POLICY !!BlockThirdPartyCookies_Policy
+        #if version >= 4
+          SUPPORTED !!SUPPORTED_WINXPSP2
+        #endif
+        EXPLAIN !!BlockThirdPartyCookies_Explain
+        VALUENAME "BlockThirdPartyCookies"
+        VALUEON NUMERIC 1
+        VALUEOFF NUMERIC 0
+      END POLICY
+
+      POLICY !!BookmarkBarEnabled_Policy
+        #if version >= 4
+          SUPPORTED !!SUPPORTED_WINXPSP2
+        #endif
+        EXPLAIN !!BookmarkBarEnabled_Explain
+        VALUENAME "BookmarkBarEnabled"
+        VALUEON NUMERIC 1
+        VALUEOFF NUMERIC 0
+      END POLICY
+
+      POLICY !!ClearSiteDataOnExit_Policy
+        #if version >= 4
+          SUPPORTED !!SUPPORTED_WINXPSP2
+        #endif
+        EXPLAIN !!ClearSiteDataOnExit_Explain
+        VALUENAME "ClearSiteDataOnExit"
+        VALUEON NUMERIC 1
+        VALUEOFF NUMERIC 0
+      END POLICY
+
+      POLICY !!DnsPrefetchingEnabled_Policy
+        #if version >= 4
+          SUPPORTED !!SUPPORTED_WINXPSP2
+        #endif
+        EXPLAIN !!DnsPrefetchingEnabled_Explain
+        VALUENAME "DnsPrefetchingEnabled"
+        VALUEON NUMERIC 1
+        VALUEOFF NUMERIC 0
+      END POLICY
+
+      POLICY !!DownloadDirectory_Policy
+        #if version >= 4
+          SUPPORTED !!SUPPORTED_WINXPSP2
+        #endif
+        EXPLAIN !!DownloadDirectory_Explain
+
+        PART !!DownloadDirectory_Part  EDITTEXT
+          VALUENAME "DownloadDirectory"
+        END PART
+      END POLICY
+
+      POLICY !!ImportBookmarks_Policy
+        #if version >= 4
+          SUPPORTED !!SUPPORTED_WINXPSP2
+        #endif
+        EXPLAIN !!ImportBookmarks_Explain
+        VALUENAME "ImportBookmarks"
+        VALUEON NUMERIC 1
+        VALUEOFF NUMERIC 0
+      END POLICY
+
+      POLICY !!ImportHistory_Policy
+        #if version >= 4
+          SUPPORTED !!SUPPORTED_WINXPSP2
+        #endif
+        EXPLAIN !!ImportHistory_Explain
+        VALUENAME "ImportHistory"
+        VALUEON NUMERIC 1
+        VALUEOFF NUMERIC 0
+      END POLICY
+
+      POLICY !!ImportHomepage_Policy
+        #if version >= 4
+          SUPPORTED !!SUPPORTED_WINXPSP2
+        #endif
+        EXPLAIN !!ImportHomepage_Explain
+        VALUENAME "ImportHomepage"
+        VALUEON NUMERIC 1
+        VALUEOFF NUMERIC 0
+      END POLICY
+
+      POLICY !!ImportSavedPasswords_Policy
+        #if version >= 4
+          SUPPORTED !!SUPPORTED_WINXPSP2
+        #endif
+        EXPLAIN !!ImportSavedPasswords_Explain
+        VALUENAME "ImportSavedPasswords"
+        VALUEON NUMERIC 1
+        VALUEOFF NUMERIC 0
+      END POLICY
+
+      POLICY !!ImportSearchEngine_Policy
+        #if version >= 4
+          SUPPORTED !!SUPPORTED_WINXPSP2
+        #endif
+        EXPLAIN !!ImportSearchEngine_Explain
+        VALUENAME "ImportSearchEngine"
+        VALUEON NUMERIC 1
+        VALUEOFF NUMERIC 0
+      END POLICY
+
+      POLICY !!InstantEnabled_Policy
+        #if version >= 4
+          SUPPORTED !!SUPPORTED_WINXPSP2
+        #endif
+        EXPLAIN !!InstantEnabled_Explain
+        VALUENAME "InstantEnabled"
+        VALUEON NUMERIC 1
+        VALUEOFF NUMERIC 0
+      END POLICY
+
+      POLICY !!MetricsReportingEnabled_Policy
+        #if version >= 4
+          SUPPORTED !!SUPPORTED_WINXPSP2
+        #endif
+        EXPLAIN !!MetricsReportingEnabled_Explain
+        VALUENAME "MetricsReportingEnabled"
+        VALUEON NUMERIC 1
+        VALUEOFF NUMERIC 0
+      END POLICY
+
+      POLICY !!SafeBrowsingEnabled_Policy
+        #if version >= 4
+          SUPPORTED !!SUPPORTED_WINXPSP2
+        #endif
+        EXPLAIN !!SafeBrowsingEnabled_Explain
+        VALUENAME "SafeBrowsingEnabled"
+        VALUEON NUMERIC 1
+        VALUEOFF NUMERIC 0
+      END POLICY
+
+      POLICY !!SearchSuggestEnabled_Policy
+        #if version >= 4
+          SUPPORTED !!SUPPORTED_WINXPSP2
+        #endif
+        EXPLAIN !!SearchSuggestEnabled_Explain
+        VALUENAME "SearchSuggestEnabled"
+        VALUEON NUMERIC 1
+        VALUEOFF NUMERIC 0
+      END POLICY
+
+      POLICY !!ShowHomeButton_Policy
+        #if version >= 4
+          SUPPORTED !!SUPPORTED_WINXPSP2
+        #endif
+        EXPLAIN !!ShowHomeButton_Explain
+        VALUENAME "ShowHomeButton"
+        VALUEON NUMERIC 1
+        VALUEOFF NUMERIC 0
+      END POLICY
+
+      POLICY !!TranslateEnabled_Policy
+        #if version >= 4
+          SUPPORTED !!SUPPORTED_WINXPSP2
+        #endif
+        EXPLAIN !!TranslateEnabled_Explain
+        VALUENAME "TranslateEnabled"
+        VALUEON NUMERIC 1
+        VALUEOFF NUMERIC 0
+      END POLICY
+
+    END CATEGORY
+  END CATEGORY
+
+
+[Strings]
+SUPPORTED_WINXPSP2="Microsoft Windows XP SP2 或更高版本"
+google="Google"
+googlechrome="Google Chrome"
+googlechrome_recommended="Google Chrome (推荐)"
+HTTPAuthentication_Category="HTTP 身份验证的政策"
+AuthSchemes_Policy="支持的身份验证方案"
+AuthSchemes_Explain="指定 Google Chrome所支持的 HTTP 身份验证方案。可用的值有“basic”、“digest”、“ntlm”和“negotiate”。多个值之间用英文逗号分隔。如果未设置此政策，系统将会使用所有这四种方案。"
+AuthSchemes_Part="支持的身份验证方案"
+DisableAuthNegotiateCnameLookup_Policy="在协商 Kerberos 身份验证时停用 CNAME 查找"
+DisableAuthNegotiateCnameLookup_Explain="指定 Kerberos SPN 是基于规范 DNS 名称还是基于输入的原始名称。如果您启用了此设置，系统将跳过 CNAME 查找步骤，并使用输入的服务器名称。如果您停用或未配置此设置，系统将通过 CNAME 查找来确定服务器的规范名称。"
+EnableAuthNegotiatePort_Policy="在 Kerberos SPN 中加入非标准端口"
+EnableAuthNegotiatePort_Explain="指定生成的 Kerberos SPN 是否应包括非标准端口。如果您启用了此设置，并输入某个非标准端口（即除 80 或 443 以外的端口），该端口就会包括在生成的 Kerberos SPN 中。如果您停用或未配置此设置，生成的 Kerberos SPN 在任何情况下都不会包括端口。"
+AuthServerWhitelist_Policy="身份验证服务器白名单"
+AuthServerWhitelist_Explain="指定应将哪些服务器列入集成身份验证的白名单。只有当 Google Chrome从代理或允许列表中的服务器接收身份验证质询时，才会启用集成身份验证。用英文逗号分隔多个服务器名称。允许使用通配符 (*)。如果您未设置此政策，集成身份验证将接受任何服务器。"
+AuthServerWhitelist_Part="身份验证服务器白名单"
+AuthNegotiateDelegateWhitelist_Policy="Kerberos 授权服务器白名单"
+AuthNegotiateDelegateWhitelist_Explain="Google Chrome可授权的服务器。用英文逗号分隔多个服务器名称。允许使用通配符 (*)。如果您未设置此政策，集成身份验证将接受任何服务器。"
+AuthNegotiateDelegateWhitelist_Part="Kerberos 授权服务器白名单"
+AllowCrossOriginAuthPrompt_Policy="跨域 HTTP 基本身份验证提示"
+AllowCrossOriginAuthPrompt_Explain="控制是否允许网页上的第三方子内容弹出 HTTP 基本身份认证对话框。通常情况下，为了防止网上诱骗，此设置是停用的。如果未设置此政策，就会停用此设置，而不允许第三方子内容弹出 HTTP 基本身份认证对话框。"
+Homepage_Category="主页"
+HomepageLocation_Policy="配置主页网址"
+HomepageLocation_Explain="在 Google Chrome中配置默认主页网址，并禁止用户更改此设置。您可将主页类型设置为此处指定的网址，也可以设置为新标签页。如果您选择了新标签页，就会忽略此政策。如果您启用了此设置，用户就无法在 Google Chrome中更改自己的主页网址，但是仍可以选择新标签页作为主页。如果既没有设置此政策，也没有设置 HomepageIsNewTabPage，用户就可以自行选择主页。"
+HomepageLocation_Part="主页网址"
+HomepageIsNewTabPage_Policy="使用“新标签页”作为主页"
+HomepageIsNewTabPage_Explain="在 Google Chrome中配置默认主页的类型，并禁止用户更改主页偏好设置。您既可以将主页设为指定的网址，也可以将其设为新标签页。如果您启用了此设置，系统就会始终使用新标签页作为主页，并忽略主页网址。如果您停用了此设置，那么除非将用户的主页设为“chrome://newtab”，否则主页永远不会是新标签页。如果您启用或停用了此设置，用户就无法在 Google Chrome中更改自己的主页类型。如果未设置此政策，用户就可以自行选择是否将新标签页作为主页。"
+Proxy_Category="代理服务器"
+ProxyMode_Policy="选择如何指定代理服务器设置"
+ProxyMode_Explain="可让您指定 Google Chrome使用的代理服务器，并禁止用户更改代理设置。如果您选择永不使用代理服务器，而总是直接连接，就会忽略其他所有选项。如果您选择使用系统代理设置或自动检测代理服务器，就会忽略其他所有选项。如果您选择固定服务器代理模式，可在“代理服务器的地址或网址”以及“代理绕过规则的逗号分隔列表”中进一步指定选项。如果您选择使用 .pac 代理脚本，必须在“代理 .pac 文件的网址”中指定该脚本的网址。要查看详细示例，请访问：http://www.chromium.org/developers/design-documents/network-settings#TOC-Command-line-options-for-proxy-sett。如果您启用了此设置，Google Chrome就会忽略通过命令行指定的所有代理相关选项。如果未设置此政策，用户就可以自行选择代理设置。"
+ProxyMode_Part="选择如何指定代理服务器设置"
+ProxyDisabled_DropDown="从不使用代理"
+ProxyAutoDetect_DropDown="自动检测代理设置"
+ProxyPacScript_DropDown="使用 .pac 代理脚本"
+ProxyFixedServers_DropDown="使用固定的代理服务器"
+ProxyUseSystem_DropDown="使用系统代理设置"
+ProxyServer_Policy="代理服务器的地址或网址"
+ProxyServer_Explain="您可以在此指定代理服务器的网址。只有当您在“选择如何指定代理服务器设置”中选择了手动代理设置后，此政策才会生效。如果您选择了其他任何模式来设置代理政策，就不应设置此政策。要查看更多选项和详细示例，请访问：http://www.chromium.org/developers/design-documents/network-settings#TOC-Command-line-options-for-proxy-sett"
+ProxyServer_Part="代理服务器的地址或网址"
+ProxyPacUrl_Policy="代理 .pac 文件的网址"
+ProxyPacUrl_Explain="您可以在此指定代理 .pac 文件的网址。只有当您在“选择如何指定代理服务器设置”中选择了手动代理设置后，此政策才会生效。如果您选择了其他任何模式来设置代理政策，就不应设置此政策。要查看详细示例，请访问：http://www.chromium.org/developers/design-documents/network-settings#TOC-Command-line-options-for-proxy-sett"
+ProxyPacUrl_Part="代理 .pac 文件的网址"
+ProxyBypassList_Policy="代理绕过规则"
+ProxyBypassList_Explain="Google Chrome将对于此处给定的主机列表绕过任何代理。只有当您在“选择如何指定代理服务器设置”中选择了手动代理设置后，此政策才会生效。如果您选择了其他任何模式来设置代理政策，就不应设置此政策。要查看详细示例，请访问：http://www.chromium.org/developers/design-documents/network-settings#TOC-Command-line-options-for-proxy-sett。"
+ProxyBypassList_Part="代理绕过规则的逗号分隔列表"
+ChromeFrameContentTypes_Category="允许“Google Chrome Frame”处理以下内容类型。"
+ChromeFrameContentTypes_Policy="允许 Google Chrome Frame处理列出的内容类型。"
+ChromeFrameContentTypes_Explain="允许 Google Chrome Frame处理列出的内容类型。如果未设置此政策，系统将按照“ChromeFrameRendererSettings”政策的规定，对所有网站使用默认呈现器。"
+ChromeFrameContentTypes_Part="允许 Google Chrome Frame处理列出的内容类型。"
+ContentSettings_Category="内容设置"
+DefaultCookiesSetting_Policy="默认 Cookie 设置"
+DefaultCookiesSetting_Explain="可让您设置是否允许网站设置本地数据。可以针对所有网站允许或拒绝设置本地数据。如果未设置此政策，系统将使用“AllowCookies”并允许用户更改此设置。"
+DefaultCookiesSetting_Part="默认 Cookie 设置"
+AllowCookies_DropDown="允许所有网站设置本地数据。"
+BlockCookies_DropDown="不允许任何网站设置本地数据"
+DefaultImagesSetting_Policy="默认图片设置"
+DefaultImagesSetting_Explain="可让您设置是否允许网站显示图片。可以针对所有网站允许或拒绝显示图片。如果未设置此政策，系统将使用“AllowImages”并允许用户更改此设置。"
+DefaultImagesSetting_Part="默认图片设置"
+AllowImages_DropDown="允许所有网站显示所有图片"
+BlockImages_DropDown="不允许任何网站显示图片"
+DefaultJavaScriptSetting_Policy="默认 JavaScript 设置"
+DefaultJavaScriptSetting_Explain="可让您设置是否允许网站运行 JavaScript。可以针对所有网站允许或拒绝运行 JavaScript。如果未设置此政策，系统将使用“AllowJavaScript”并允许用户更改此设置。"
+DefaultJavaScriptSetting_Part="默认 JavaScript 设置"
+AllowJavaScript_DropDown="允许所有网站运行 JavaScript"
+BlockJavaScript_DropDown="不允许任何网站运行 JavaScript"
+DefaultPluginsSetting_Policy="默认插件设置"
+DefaultPluginsSetting_Explain="可让您设置是否允许网站自动运行插件。可以针对所有网站允许或拒绝自动运行插件。如果未设置此政策，系统将使用“AllowPlugins”并允许用户更改此设置。"
+DefaultPluginsSetting_Part="默认插件设置"
+AllowPlugins_DropDown="允许所有网站自动运行插件"
+BlockPlugins_DropDown="阻止所有插件"
+DefaultPopupsSetting_Policy="默认弹出式窗口设置"
+DefaultPopupsSetting_Explain="可让您设置是否允许网站显示弹出式窗口。可以针对所有网站允许或拒绝显示弹出式窗口。如果未设置此政策，系统将使用“BlockPopups”并允许用户更改此设置。"
+DefaultPopupsSetting_Part="默认弹出式窗口设置"
+AllowPopups_DropDown="允许所有网站显示弹出式窗口"
+BlockPopups_DropDown="不允许任何网站显示弹出式窗口"
+DefaultNotificationsSetting_Policy="默认通知设置"
+DefaultNotificationsSetting_Explain="可让您设置是否允许网站显示桌面通知。默认情况下，可以允许或拒绝显示桌面通知，也可以在每次网站要显示桌面通知时询问用户。如果未设置此政策，系统将使用“AskNotifications”并允许用户更改此设置。"
+DefaultNotificationsSetting_Part="默认通知设置"
+AllowNotifications_DropDown="允许网站显示桌面通知"
+BlockNotifications_DropDown="不允许任何网站显示桌面通知"
+AskNotifications_DropDown="每次网站尝试显示桌面通知时都询问"
+DefaultGeolocationSetting_Policy="默认地理位置设置"
+DefaultGeolocationSetting_Explain="可让您设置是否允许网站跟踪用户的地理位置。默认情况下，可以允许或拒绝跟踪用户的地理位置，也可以在每次网站请求地理位置时询问用户。如果未设置此政策，系统将使用“AskGeolocation”并允许用户更改此设置。"
+DefaultGeolocationSetting_Part="默认地理位置设置"
+AllowGeolocation_DropDown="允许网站跟踪用户的地理位置"
+BlockGeolocation_DropDown="不允许任何网站跟踪用户的地理位置"
+AskGeolocation_DropDown="每次网站尝试跟踪用户的地理位置时都询问我"
+AutoSelectCertificateForUrls_Policy="自动选择这些网站的客户端证书"
+AutoSelectCertificateForUrls_Explain="可让您指定网址格式的列表，这些网址格式用于指定在网站请求证书时，应由 Google Chrome自动选择客户端证书的网站。如果未设置此政策，系统就不会对任何网站自动选择证书。"
+AutoSelectCertificateForUrls_Part="自动选择这些网站的客户端证书"
+CookiesAllowedForUrls_Policy="在这些网站上允许 Cookie"
+CookiesAllowedForUrls_Explain="可让您设置网址格式的列表，这些网址格式用于指定允许设置 Cookie 的网站。在未设置此政策的情况下，如果设置了“DefaultCookiesSetting”政策，那么将对该政策中的所有网站使用全局默认值，否则将对用户个人配置中的所有网站使用全局默认值。"
+CookiesAllowedForUrls_Part="在这些网站上允许 Cookie"
+CookiesBlockedForUrls_Policy="在这些网站上阻止 Cookie"
+CookiesBlockedForUrls_Explain="可让您设置网址格式的列表，这些网址格式用于指定不允许设置 Cookie 的网站。在未设置此政策的情况下，如果设置了“DefaultCookiesSetting”政策，那么将对该政策中的所有网站使用全局默认值，否则将对用户个人配置中的所有网站使用全局默认值。"
+CookiesBlockedForUrls_Part="在这些网站上阻止 Cookie"
+CookiesSessionOnlyForUrls_Policy="在这些网站上允许仅限会话的 Cookie"
+CookiesSessionOnlyForUrls_Explain="Allows you to set a list of url patterns that specify sites which are allowed to set session only cookies.\n\nIf this policy is left not set the global default value will be used for all sites either from the 'DefaultCookiesSetting' policy if it is set, or the user's personal configuration otherwise.\n\nIf the "RestoreOnStartup" policy is set to restore URLs from previous sessions this policy will not be respectred and cookies will be stored permanently for those sites."
+CookiesSessionOnlyForUrls_Part="在这些网站上允许仅限会话的 Cookie"
+ImagesAllowedForUrls_Policy="在这些网站上允许图片"
+ImagesAllowedForUrls_Explain="可让您设置网址格式的列表，这些网址格式用于指定允许显示图片的网站。在未设置此政策的情况下，如果设置了“DefaultImagesSetting”政策，那么将对该政策中的所有网站使用全局默认值，否则将对用户个人配置中的所有网站使用全局默认值。"
+ImagesAllowedForUrls_Part="在这些网站上允许图片"
+ImagesBlockedForUrls_Policy="在这些网站上阻止图片"
+ImagesBlockedForUrls_Explain="可让您设置网址格式的列表，这些网址格式用于指定不允许显示图片的网站。在未设置此政策的情况下，如果设置了“DefaultImagesSetting”政策，那么将对该政策中的所有网站使用全局默认值，否则将对用户个人配置中的所有网站使用全局默认值。"
+ImagesBlockedForUrls_Part="在这些网站上阻止图片"
+JavaScriptAllowedForUrls_Policy="在这些网站上允许 JavaScript"
+JavaScriptAllowedForUrls_Explain="可让您设置网址格式的列表，这些网址格式用于指定允许运行 JavaScript 的网站。在未设置此政策的情况下，如果设置了“DefaultJavaScriptSetting”政策，那么将对该政策中的所有网站使用全局默认值，否则将对用户个人配置中的所有网站使用全局默认值。"
+JavaScriptAllowedForUrls_Part="在这些网站上允许 JavaScript"
+JavaScriptBlockedForUrls_Policy="在这些网站上阻止 JavaScript"
+JavaScriptBlockedForUrls_Explain="可让您设置网址格式的列表，这些网址格式用于指定不允许运行 JavaScript 的网站。在未设置此政策的情况下，如果设置了“DefaultJavaScriptSetting”政策，那么将对该政策中的所有网站使用全局默认值，否则将对用户个人配置中的所有网站使用全局默认值。"
+JavaScriptBlockedForUrls_Part="在这些网站上阻止 JavaScript"
+PluginsAllowedForUrls_Policy="在这些网站上允许插件"
+PluginsAllowedForUrls_Explain="可让您设置网址格式的列表，这些网址格式用于指定允许运行插件的网站。在未设置此政策的情况下，如果设置了“DefaultPluginsSetting”政策，那么将对该政策中的所有网站使用全局默认值，否则将对用户个人配置中的所有网站使用全局默认值。"
+PluginsAllowedForUrls_Part="在这些网站上允许插件"
+PluginsBlockedForUrls_Policy="在这些网站上阻止插件"
+PluginsBlockedForUrls_Explain="可让您设置网址格式的列表，这些网址格式用于指定不允许运行插件的网站。在未设置此政策的情况下，如果设置了“DefaultPluginsSetting”政策，那么将对该政策中的所有网站使用全局默认值，否则将对用户个人配置中的所有网站使用全局默认值。"
+PluginsBlockedForUrls_Part="在这些网站上阻止插件"
+PopupsAllowedForUrls_Policy="在这些网站上允许弹出式窗口"
+PopupsAllowedForUrls_Explain="可让您设置网址格式的列表，这些网址格式用于指定允许打开弹出式窗口的网站。在未设置此政策的情况下，如果设置了“DefaultPopupsSetting”政策，那么将对该政策中的所有网站使用全局默认值，否则将对用户个人配置中的所有网站使用全局默认值。"
+PopupsAllowedForUrls_Part="在这些网站上允许弹出式窗口"
+PopupsBlockedForUrls_Policy="在这些网站上阻止弹出式窗口"
+PopupsBlockedForUrls_Explain="可让您设置网址格式的列表，这些网址格式用于指定不允许打开弹出式窗口的网站。在未设置此政策的情况下，如果设置了“DefaultPopupsSetting”政策，那么将对该政策中的所有网站使用全局默认值，否则将对用户个人配置中的所有网站使用全局默认值。"
+PopupsBlockedForUrls_Part="在这些网站上阻止弹出式窗口"
+NotificationsAllowedForUrls_Policy="允许在这些网站上显示通知"
+NotificationsAllowedForUrls_Explain="可让您设置网址格式的列表，这些网址格式用于指定允许显示通知的网站。在未设置此政策的情况下，如果设置了“DefaultNotificationsSetting”政策，那么将对该政策中的所有网站使用全局默认值，否则将对用户个人配置中的所有网站使用全局默认值。"
+NotificationsAllowedForUrls_Part="允许在这些网站上显示通知"
+NotificationsBlockedForUrls_Policy="阻止在这些网站上显示通知"
+NotificationsBlockedForUrls_Explain="可让您设置网址格式的列表，这些网址格式用于指定不允许显示通知的网站。在未设置此政策的情况下，如果设置了“DefaultNotificationsSetting”政策，那么将对该政策中的所有网站使用全局默认值，否则将对用户个人配置中的所有网站使用全局默认值。"
+NotificationsBlockedForUrls_Part="阻止在这些网站上显示通知"
+RestoreOnStartupGroup_Category="启动页"
+RestoreOnStartup_Policy="启动时的操作"
+RestoreOnStartup_Explain="Allows you to specify the behavior on startup.\n\nIf you choose 'Open home page' the home page will always be opened when you start Google Chrome.\n\nIf you choose 'Restore the last session', the URLs that were open last time Google Chrome was closed will be reopened and the browsing session will be restored as it was left.\nChoosing this option disables some settings that rely on sessions or that perform actions on exit (such as Clear browsing data on exit or session-only cookies).\n\nIf you choose 'Open a list of URLs', the list of 'URLs to open on startup' will be opened when a user starts Google Chrome.\n\nIf you enable this setting, users cannot change or override it in Google Chrome.\n\nDisabling this setting is equvalent to leaving it not configured. The user will still be able to change it in Google Chrome."
+RestoreOnStartup_Part="启动时的操作"
+RestoreOnStartupIsNone_DropDown="打开主页"
+RestoreOnStartupIsLastSession_DropDown="Restore the last session"
+RestoreOnStartupIsURLs_DropDown="打开网址列表"
+RestoreOnStartupURLs_Policy="启动时打开的网址"
+RestoreOnStartupURLs_Explain="如果选择“打开网址列表”作为启动时的操作，您就可以指定要打开的网址的列表。如果未设置，启动时就不会打开任何网址。此政策只有在“RestoreOnStartup”政策设为“RestoreOnStartupIsURLs”的情况下才有效。"
+RestoreOnStartupURLs_Part="启动时打开的网址"
+PasswordManager_Category="密码管理器"
+PasswordManagerEnabled_Policy="启用密码管理器"
+PasswordManagerEnabled_Explain="允许在 Google Chrome中保存密码并使用已保存的密码。如果您启用了此设置，用户就可以让 Google Chrome记住密码，并在下次登录相关网站时自动填充密码。如果您停用了此设置，用户就无法保存密码，也无法使用已保存的密码。如果您启用或停用了此设置，用户就无法在 Google Chrome中更改或替换此设置。如果未设置此政策，就会启用此设置，不过用户也可以更改此设置。"
+PasswordManagerAllowShowPasswords_Policy="允许用户在“密码管理器”中显示密码"
+PasswordManagerAllowShowPasswords_Explain="控制用户是否可以在密码管理器中以明文显示密码。如果您停用了此设置，就不允许在密码管理器窗口中以明文显示存储的密码。如果您启用或未设置此策略，用户就可以在密码管理器中以明文查看自己的密码。"
+Extensions_Category="扩展程序"
+ExtensionInstallBlacklist_Policy="配置扩展程序安装黑名单"
+ExtensionInstallBlacklist_Explain="可让您指定哪些扩展程序是用户无法安装的。已安装的扩展程序如果列入黑名单，就会遭到删除。黑名单中的“*”值表示：除了在白名单中明确列出的扩展程序，其他所有扩展程序均列入黑名单。如果未设置此政策，用户就可以在 Google Chrome中安装任何扩展程序。"
+ExtensionInstallBlacklist_Part="应禁止用户安装的扩展程序的 ID（或者用“*”表示禁止安装所有扩展程序）"
+ExtensionInstallWhitelist_Policy="配置扩展程序安装白名单"
+ExtensionInstallWhitelist_Explain="可让您指定不受黑名单影响的扩展程序。黑名单值“*”表示所有扩展程序均已列入黑名单，用户只能安装白名单中列出的扩展程序。默认情况下，所有扩展程序都列在白名单中，但如果所有扩展程序均已根据某个政策列入黑名单，则白名单可用于覆盖相关政策。"
+ExtensionInstallWhitelist_Part="要从黑名单中排除的扩展程序 ID"
+ExtensionInstallForcelist_Policy="配置强制安装的扩展程序的列表"
+ExtensionInstallForcelist_Explain="Allows you to specify a list of extensions that will be installed silently, without user interaction.\n\nEach item of the list is a string that contains an extension ID and an update URL delimited by a semicolon (;). The extension ID is the 32-letter string found e.g. on chrome://extensions when in developer mode. The update URL should point to an Update Manifest XML document as described at http://code.google.com/chrome/extensions/autoupdate.html.\n\nFor each item, Google Chrome will retrieve the extension specified by the extension ID from the update service at the specified update URL and silently install it.\n\nFor example, lcncmkcnkcdbbanbjakcencbaoegdjlp;https://clients2.google.com/service/update2/crx installs the Google SSL Web Search extension from the standard Chrome Web Store update URL. For more information about hosting extensions, see: http://code.google.com/chrome/extensions/hosting.html.\n\nUsers will be unable to uninstall extensions that are specified by this policy. If you remove an extension from this list, then it will be automatically uninstalled by Google Chrome.\n\nIf this policy is left not set the user can uninstall any extension  in Google Chrome."
+ExtensionInstallForcelist_Part="要静默安装的扩展程序的 ID 和更新网址"
+RemoteAccess_Category="配置远程访问选项"
+RemoteAccessHostFirewallTraversal_Policy="支持通过远程访问主机穿越防火墙"
+RemoteAccessHostFirewallTraversal_Explain="当远程客户端尝试与此计算机建立连接时，允许使用 STUN 和中继服务器。如果启用此设置，那么即使远程客户端受到防火墙隔离，也仍然可以检测到并连接到此计算机。如果停用此设置，并且防火墙过滤了外发 UDP 连接，那么此计算机将只能与本地网络内的客户端计算机建立连接。如果未设置此政策，就会启用此设置。"
+ChromeFrameRendererSettings_Category="默认 HTML 呈现器为“Google Chrome Frame”"
+ChromeFrameRendererSettings_Policy="默认 HTML 呈现器为“Google Chrome Frame”"
+ChromeFrameRendererSettings_Explain="可让您在安装 Google Chrome Frame时配置默认 HTML 呈现器。如果未设置此政策，则使用默认设置，即允许托管浏览器进行呈现。不过您可以视情况替换此设置，让 Google Chrome Frame默认呈现 HTML 网页。"
+ChromeFrameRendererSettings_Part="默认 HTML 呈现器为“Google Chrome Frame”"
+RenderInHost_DropDown="默认情况下托管主机浏览器"
+RenderInChromeFrame_DropDown="默认情况下使用“Google Chrome Frame”"
+RenderInChromeFrameList_Policy="总是通过“Google Chrome Frame”呈现以下网址格式"
+RenderInChromeFrameList_Explain="自定义应始终由 Google Chrome Frame呈现的网址格式的列表。如果未设置此政策，系统将按照“ChromeFrameRendererSettings”政策的规定，对所有网站使用默认呈现器。要查看示例格式，请访问 http://www.chromium.org/developers/how-tos/chrome-frame-getting-started。"
+RenderInChromeFrameList_Part="总是通过“Google Chrome Frame”呈现以下网址格式"
+RenderInHostList_Policy="总是通过托管浏览器呈现以下网址格式"
+RenderInHostList_Explain="自定义应始终由托管浏览器呈现的网址格式的列表。如果未设置此政策，系统将按照“ChromeFrameRendererSettings”政策的规定，对所有网站使用默认呈现器。要查看示例格式，请访问 http://www.chromium.org/developers/how-tos/chrome-frame-getting-started。"
+RenderInHostList_Part="总是通过托管浏览器呈现以下网址格式"
+DefaultSearchProvider_Category="默认搜索服务提供商"
+DefaultSearchProviderEnabled_Policy="启用默认搜索服务提供商"
+DefaultSearchProviderEnabled_Explain="启用默认搜索服务提供商。如果您启用了此设置，当用户在多功能框中输入非网址的文字时，系统会执行默认搜索。您可以设置其余的默认搜索政策，从而指定要使用的默认搜索服务提供商。如果这些选项都留空，用户就可以选择默认的服务提供商。如果您停用了此设置，当用户在多功能框中输入非网址的文字时，系统不会执行任何搜索。如果您启用或停用了此设置，用户就无法在 Google Chrome中更改或替换此设置。如果未设置此政策，就会启用默认搜索服务提供商，而用户也可以设置搜索服务提供商的列表。"
+DefaultSearchProviderName_Policy="默认搜索服务提供商名称"
+DefaultSearchProviderName_Explain="指定默认搜索服务提供商的名称。如果留空或未设置，系统就会使用由搜索网址指定的主机名。要考虑此政策，必须先启用“DefaultSearchProviderEnabled”政策。"
+DefaultSearchProviderName_Part="默认搜索服务提供商名称"
+DefaultSearchProviderKeyword_Policy="默认搜索服务提供商关键字"
+DefaultSearchProviderKeyword_Explain="指定关键字，该关键字在多功能框中作为快捷方式来触发针对此提供商的搜索。此政策是可选的，如果未设置，就没有任何关键字可激活搜索服务提供商。要实施此政策，必须先启用“DefaultSearchProviderEnabled”政策。"
+DefaultSearchProviderKeyword_Part="默认搜索服务提供商关键字"
+DefaultSearchProviderSearchURL_Policy="默认搜索服务提供商的搜索网址"
+DefaultSearchProviderSearchURL_Explain="指定要在执行默认搜索时使用的搜索引擎的网址，其中应包含字符串“{searchTerms}”，系统会在查询时将该字符串替换为用户搜索的字词。在启用了“DefaultSearchProviderEnabled”政策的情况下，此选项是必须设置的，而且只有在这种情况下才应遵循。"
+DefaultSearchProviderSearchURL_Part="默认搜索服务提供商的搜索网址"
+DefaultSearchProviderSuggestURL_Policy="默认搜索服务提供商建议网址"
+DefaultSearchProviderSuggestURL_Explain="指定用于提供搜索建议的搜索引擎的网址，其中应包含字符串“{searchTerms}”，系统会在查询时将该字符串替换为用户输入的文字。此政策是可选的，如果未设置，就不会使用任何建议网址。要实施此政策，必须先启用“DefaultSearchProviderEnabled”政策。"
+DefaultSearchProviderSuggestURL_Part="默认搜索服务提供商建议网址"
+DefaultSearchProviderInstantURL_Policy="默认搜索服务提供商的即搜即得网址"
+DefaultSearchProviderInstantURL_Explain="指定用于提供即搜即得结果的搜索引擎的网址，其中应包含字符串“'{searchTerms}'”，系统会在查询时将该字符串替换为用户输入的文字。此政策是可选的，如果未设置，就不会提供任何即搜即得结果。要实施此政策，必须先启用“DefaultSearchProviderEnabled”政策。"
+DefaultSearchProviderInstantURL_Part="默认搜索服务提供商的即搜即得网址"
+DefaultSearchProviderIconURL_Policy="默认搜索服务提供商图标"
+DefaultSearchProviderIconURL_Explain="指定默认搜索服务提供商的首选图标网址。此政策是可选的，如果未设置，搜索服务提供商就不会显示任何图标。要实施此政策，必须启用“DefaultSearchProviderEnabled”政策。"
+DefaultSearchProviderIconURL_Part="默认搜索服务提供商图标"
+DefaultSearchProviderEncodings_Policy="默认搜索服务提供商的编码"
+DefaultSearchProviderEncodings_Explain="指定搜索服务提供商支持的字符编码。编码是指类似于 UTF-8、GB2312 和 ISO-8859-1 的代码页名称，并按此顺序进行尝试。此政策是可选的，如果未设置，将使用默认值 UTF-8。要实施此政策，必须先启用“DefaultSearchProviderEnabled”政策。"
+DefaultSearchProviderEncodings_Part="默认搜索服务提供商的编码"
+AllowFileSelectionDialogs_Policy="允许调用文件选择对话框。"
+AllowFileSelectionDialogs_Explain="允许 Google Chrome显示文件选择对话框，从而允许用户访问计算机上的本地文件。如果您启用了此设置，用户就可以正常地打开文件选择对话框。如果您停用了此设置，那么只要用户执行了会触发文件选择对话框的操作（如导入书签、上传文件、保存链接等），系统就会显示一条讯息，并且假定用户已在该文件选择对话框中点击了“取消”。如果您未设定此设置，用户就可以正常地打开文件选择对话框。"
+AllowOutdatedPlugins_Policy="允许运行过期的插件"
+AllowOutdatedPlugins_Explain="允许“Google Chrome”运行过期插件。如果您启用了此设置，则过期插件可作为正常插件使用。如果您停用了此设置，则过期插件将无法使用，并且系统不会要求用户提供运行过期插件的权限。如果此设置未配置，则系统会要求用户提供运行过期插件的权限。"
+AlternateErrorPagesEnabled_Policy="启用备用的错误页面"
+AlternateErrorPagesEnabled_Explain="允许使用 Google Chrome中内置的备用错误网页（例如“找不到网页”），并禁止用户更改此设置。如果您启用了此设置，系统就会使用备用错误网页。如果您停用了此设置，系统就不会使用备用错误网页。如果您启用或停用了此设置，用户就无法在 Google Chrome中更改或替换此设置。如果未设置此政策，就会启用此设置，不过用户也可以更改此设置。"
+AlwaysAuthorizePlugins_Policy="始终运行需要授权的插件"
+AlwaysAuthorizePlugins_Explain="允许“Google Chrome”运行需要授权的插件。如果启用了此设置，则未过期的插件会一直运行。如果停用或未设置此设置，系统会要求用户提供运行需要授权的插件的权限。这些插件可能会危及安全性。"
+ApplicationLocaleValue_Policy="应用程序语言区域"
+ApplicationLocaleValue_Explain="在 Google Chrome中配置应用程序的语言区域，并禁止用户更改语言区域。如果您启用了此设置，Google Chrome就会使用指定的语言区域。如果配置的语言区域不受支持，就会改用“en-US”。如果已停用或未配置此设置，Google Chrome就会使用由用户指定的首选语言区域（如果已配置）、系统语言区域或备用语言区域“en-US”。"
+ApplicationLocaleValue_Part="应用程序语言区域"
+AutoFillEnabled_Policy="启用自动填充"
+AutoFillEnabled_Explain="启用 Google Chrome的自动填充功能，并允许用户使用以前存储的信息（例如地址或信用卡信息）自动填写网络表单。如果您停用了此设置，用户就无法使用自动填充功能。如果您启用了此设置或未设置值，那么自动填充功能仍由用户控制。这样，用户就可以配置自动填充个人资料，并自行决定是启用还是停用自动填充功能。"
+BackgroundModeEnabled_Policy="Continue running background apps when Google Chrome is closed"
+BackgroundModeEnabled_Explain="Determines whether a Google Chrome process is started on OS login and keeps running when the last browser window is closed, allowing background apps to remain active. The background process displays an icon in the system tray and can always be closed from there.\n\nIf this policy is set to True, background mode is enabled and cannot be controlled by the user in the browser settings.\n\nIf this policy is set to False, background mode is disabled and cannot be controlled by the user in the browser settings.\n\nIf this policy is left unset, background mode is initially disabled and can be controlled by the user in the browser settings."
+BlockThirdPartyCookies_Policy="阻止第三方 Cookie"
+BlockThirdPartyCookies_Explain="阻止第三方 Cookie。启用此设置后，如果网页元素并非来自浏览器的地址栏中的域名，就无法设置 Cookie。停用此设置后，并非来自浏览器地址栏中的域名的网页元素也可以设置 Cookie，并且用户无法更改此设置。如果未设置此政策，将启用第三方 Cookie，不过用户也可以更改此设置。"
+BookmarkBarEnabled_Policy="启用书签栏"
+BookmarkBarEnabled_Explain="在 Google Chrome中启用书签栏。如果您启用了此设置，Google Chrome就会显示书签栏。如果您停用了此设置，用户就从不会看到书签栏。如果您启用或停用了此设置，用户就无法在 Google Chrome中更改或替换此设置。如果未进行此设置，用户就可以决定是否使用此功能。"
+ClearSiteDataOnExit_Policy="在浏览器关闭时清除网站数据"
+ClearSiteDataOnExit_Explain="This policy is an override for the "Clear cookies and other site data when I close my browser" content settings option.\n\nWhen set to enabled Google Chrome will delete all locally stored data from the browser when it is shut down.\n\nIf set to disabled site data will not be cleared on exit.\n\nIf this policy is left not set Google Chrome will use the default which is to preserve site data on shut down and the user will be able to change this.\n\nIf the "RestoreOnStartup" policy is set to restore URLs from previous sessions this policy will not clear cookies or other data relevant to restoring the previous browsing session completely."
+CloudPrintProxyEnabled_Policy="启用“Google Cloud Print”代理"
+CloudPrintProxyEnabled_Explain="允许 Google Chrome作为 Google Cloud Print与连接到该计算机的传统打印机之间的代理。如果已启用或未配置此设置，用户就可以用自己的 Google 帐户进行身份验证，从而启用云打印代理。如果已停用此设置，用户将无法启用代理，该计算机也就无法与 Google Cloud Print共享其打印机。如果未设置此政策，就会启用此设置，不过用户也可以更改此设置。"
+CloudPrintSubmitEnabled_Policy="允许将文档提交到 Google Cloud Print"
+CloudPrintSubmitEnabled_Explain="允许 Google Chrome将文档提交到 Google Cloud Print进行打印。请注意：这只会影响 Google Chrome中的 Google Cloud Print支持，并不会禁止用户在网站上提交打印作业。如果启用或未配置此设置，用户就可以通过 Google Chrome的打印对话框使用 Google Cloud Print进行打印。如果停用此设置，用户就无法通过 Google Chrome的打印对话框使用 Google Cloud Print进行打印。"
+DefaultBrowserSettingEnabled_Policy="将“Chrome 浏览器”设为默认浏览器"
+DefaultBrowserSettingEnabled_Explain="在“Google Chrome”中配置默认浏览器检查，并禁止用户更改此设置。如果您启用了此设置，则“Google Chrome”在启动时总是会检查自己是否为默认浏览器，并会自动注册（如果可以）。如果此设置已停用，则“Google Chrome”永远不会检查自己是否为默认浏览器，并会禁止用户设置此选项。如果此设置未配置，则“Google Chrome”会让用户控制是否将它设为默认浏览器，并控制是否在它不是默认浏览器的情况下显示用户通知。"
+DeveloperToolsDisabled_Policy="停用开发人员工具"
+DeveloperToolsDisabled_Explain="停用开发人员工具和 JavaScript 控制台。如果您启用了此设置，用户就无法再访问开发人员工具和查看网站元素了。用于启动开发人员工具和 JavaScript 控制台的任何键盘快捷键以及任何菜单或右键菜单条目都会停用。如果停用或未设置此选项，用户就可以使用开发人员工具和 JavaScript 控制台。"
+Disable3DAPIs_Policy="停用对 3D 图形 API 的支持"
+Disable3DAPIs_Explain="停用对 3D 图形 API 的支持。启用此设置可禁止网页访问图形处理单元 (GPU)。具体而言，就是网页无法访问 WebGL API，并且插件无法使用 Pepper 3D API。停用或未配置此设置可能会允许网页使用 WebGL API，并且允许插件使用 Pepper 3D API。浏览器的默认设置可能仍然需要传递命令行参数才能使用这些 API。"
+DisablePluginFinder_Policy="指定是否应停用插件查找器"
+DisablePluginFinder_Explain="如果您启用了此设置，Google Chrome就不会自动搜索和安装缺少的插件。如果停用或未设置此选项，就会启用插件查找程序。"
+DisablePrintPreview_Policy="停用打印预览"
+DisablePrintPreview_Explain="停用打印预览。\n\n使用此设置可强制使用系统打印对话框，而不是打印预览。"
+DisableSSLRecordSplitting_Policy="停用 SSL 记录分割"
+DisableSSLRecordSplitting_Explain="指定是否应停用 SSL 记录分割。记录分割是针对 SSL 3.0 和 TLS 1.0 中的弱点采用的解决方法，但是会导致有关某些 HTTPS 服务器和代理出现兼容性问题。\n\n如果未设置此政策或将其设为 False，就会对采用 CBC 密码套件的 SSL/TLS 连接使用记录分割。"
+DisableSpdy_Policy="停用 SPDY 协议"
+DisableSpdy_Explain="禁止在 Google Chrome中使用 SPDY 协议。\n\n如果启用了此政策，就无法在 Google Chrome中使用 SPDY 协议。\n\n如果停用了此政策，就可以使用 SPDY 协议。\n\n如果未设置此政策，就可以使用 SPDY 协议。"
+DisabledPlugins_Policy="指定已停用插件的列表"
+DisabledPlugins_Explain="指定 Google Chrome中停用的插件列表，并禁止用户更改此设置。可使用通配符“*”和“?”匹配任意字符序列。“*”可匹配任意数量的字符，而“?”可指定单个可选的字符，即匹配零个或一个字符。转义字符为“\”，因此要匹配实际的“*”、“?”或“\”字符，您可以在这些字符前加上“\”。如果您启用了此设置，指定列表中的插件就从不会在 Google Chrome中使用。这些插件在“about:plugins”中标记为“已停用”，而且用户无法启用它们。请注意，此政策可由 EnabledPlugins 和 DisabledPluginsExceptions 替换。如果未设置此政策，用户就可以使用系统中安装的任何插件（硬编码的不兼容、过期或危险插件除外）。"
+DisabledPlugins_Part="已停用插件的列表"
+DisabledPluginsExceptions_Policy="指定该用户可启用或停用的插件的列表"
+DisabledPluginsExceptions_Explain="指定可由用户在 Google Chrome中启用或停用的插件的列表。可使用通配符“*”和“?”匹配任意字符序列。“*”可匹配任意数量的字符，而“?”可指定单个可选的字符，即匹配零个或一个字符。转义字符为“\”，因此要匹配实际的“*”、“?”或“\”字符，您可以在这些字符前加上“\”。如果您启用了此设置，则可在 Google Chrome中使用指定列表中的插件。即使某些插件同时匹配 DisabledPlugins 中的模式，用户也可以在“about:plugins”中启用和停用它们。用户还可以启用和停用与 DisabledPlugins、DisabledPluginsExceptions 和 EnabledPlugins 中的任何模式均不匹配的插件。此政策的目的是针对以下情况实现严格的插件黑名单设置：“DisabledPlugins”列表包含带通配符的条目，例如停用所有插件 (*) 或停用所有 Java 插件 (*Java*)，但是管理员又希望启用某些特定版本，例如“IcedTea Java 2.3”。此类特定版本可在此政策中指定。如果未设置此政策，那么与“DisabledPlugins”中的模式匹配的所有插件都会遭到锁定和停用，而且用户将无法启用这些插件。"
+DisabledPluginsExceptions_Part="已停用插件列表的例外列表"
+DisabledSchemes_Policy="停用网址协议方案"
+DisabledSchemes_Explain="在 Google Chrome中停用列出的协议方案。对于使用了此列表中方案的网址，系统不会加载，也无法导航。如果未设置此政策或者该列表为空，则可在 Google Chrome中访问所有方案。"
+DisabledSchemes_Part="已停用协议方案的列表"
+DiskCacheDir_Policy="设置磁盘缓存目录"
+DiskCacheDir_Explain="配置 Google Chrome用于在磁盘上存储缓存文件的目录。如果您设置了此政策，那么无论用户是否指定“--disk-cache-dir”标记，Google Chrome都会使用提供的目录。如果未设置此政策，系统将使用默认缓存目录，并允许用户通过“--disk-cache-dir”命令行标记替换此目录。"
+DiskCacheDir_Part="设置磁盘缓存目录"
+DiskCacheSize_Policy="Set disk cache size in bytes"
+DiskCacheSize_Explain="配置 Google Chrome用于在磁盘上存储缓存文件的缓存大小。如果您设置了此政策，那么无论用户是否指定“--disk-cache-size”标记，Google Chrome都会使用提供的缓存大小。如果此政策的值为 0，系统将使用默认缓存大小，但不允许用户更改大小。如果未设置此政策，系统将使用默认缓存大小，并允许用户通过“--disk-cache-size”标记替换该值。"
+DiskCacheSize_Part="设置磁盘缓存大小"
+DnsPrefetchingEnabled_Policy="启用网络预测功能。"
+DnsPrefetchingEnabled_Explain="在 Google Chrome中启用网络预测，并禁止用户更改此设置。如果您启用或停用了此设置，用户就无法在 Google Chrome中更改或替换此设置。如果未设置此政策，就会启用此设置，不过用户也可以更改此设置。"
+DownloadDirectory_Policy="设置下载目录"
+DownloadDirectory_Explain="配置 Google Chrome用于下载文件的目录。如果您设置了此政策，那么无论用户是否指定某个目录，也无论用户是否启用在每次下载时都提示下载位置的标记，Google Chrome都会使用提供的目录。如果未设置此政策，系统将使用默认下载目录，并允许用户更改此目录。"
+DownloadDirectory_Part="设置下载目录"
+EditBookmarksEnabled_Policy="启用或停用书签修改功能"
+EditBookmarksEnabled_Explain="在 Google Chrome中启用或停用修改书签的功能。如果您启用了此设置，可添加、删除或修改书签（默认情况下以及未设置此政策的情况下都是启用的）。如果您停用了此设置，则无法添加、删除或修改书签，但仍可以访问现有的书签。"
+EnableOnlineRevocationChecks_Policy="Whether online OCSP/CRL checks are performed"
+EnableOnlineRevocationChecks_Explain="In light of the fact that soft-fail, online revocation checks provide no effective security benefit, they are disabled by default in Google Chrome version 19 and later. By setting this policy to true, the previous behaviour is restored and online OCSP/CRL checks will be performed.\n\nIf the policy is not set, or is set to false, then Chrome will not perform online revocation checks in Chrome 19 and later."
+EnabledPlugins_Policy="指定已启用插件的列表"
+EnabledPlugins_Explain="指定在 Google Chrome中启用的插件的列表，并禁止用户更改此设置。可使用通配符“*”和“?”匹配任意字符序列。“*”可匹配任意数量的字符，而“?”可指定单个可选的字符，即匹配零个或一个字符。转义字符为“\”，因此要匹配实际的“*”、“?”或“\”字符，您可以在这些字符前加上“\”。列表中指定的插件如果已安装，就会始终在 Google Chrome中使用。这些插件在“about:plugins”中标记为“已启用”，而且用户无法停用它们。请注意，此政策可替换 DisabledPlugins 和 DisabledPluginsExceptions 这两者。如果未设置此政策，用户就可以停用系统中安装的任何插件。"
+EnabledPlugins_Part="已启用插件的列表"
+EnterpriseWebStoreName_Policy="企业的网上应用店名称"
+EnterpriseWebStoreName_Explain="企业网上应用店的名称，它将显示在新标签页上的应用程序图标下方。如果未设置 EnterpriseWebStoreURL，此设置就不会生效。如果已停用此设置，企业网上应用店应用程序（如果存在）就会标明其网址。"
+EnterpriseWebStoreName_Part="企业的网上应用店名称"
+EnterpriseWebStoreURL_Policy="企业的网上应用店网址"
+EnterpriseWebStoreURL_Explain="指定企业网上应用店的网址。启用此设置后，应用程序将显示在新标签页上，而用户点击此页后将转至指定的网址。用户可以通过此页安装扩展程序和应用程序，同时不会看到多余的警告信息。如果设置了此政策，也应设置 EnterpriseWebStoreName。如果停用了此设置，新标签页上就不会显示企业网上应用店应用程序。"
+EnterpriseWebStoreURL_Part="企业的网上应用店网址"
+GCFUserDataDir_Policy="Set Google Chrome Frame user data directory"
+GCFUserDataDir_Explain="Configures the directory that Google Chrome Frame will use for storing user data.\n\nIf you set this policy, Google Chrome Frame will use the provided directory.\n\nIf this setting is left not set the default profile directory will be used."
+GCFUserDataDir_Part="设置用户数据目录"
+HideWebStorePromo_Policy="阻止在新标签页上显示应用程序宣传信息"
+HideWebStorePromo_Explain="设置为“True”时，新标签页中不会显示 Chrome 网上应用店应用程序的推广内容。如果将此选项设置为“False”或不做任何设置，新标签页中就会显示 Chrome 网上应用店应用程序的推广内容。"
+ImportBookmarks_Policy="首次运行时，从默认浏览器导入书签"
+ImportBookmarks_Explain="如果启用此政策，就会强制从当前默认浏览器导入书签，还会影响导入对话框。如果停用此政策，就不会导入书签。如果未设置此政策，系统就会询问用户是否导入书签，或者系统自动进行导入。"
+ImportHistory_Policy="首次运行时，从默认浏览器导入浏览记录"
+ImportHistory_Explain="如果启用此政策，就会强制从当前默认浏览器导入浏览历史记录，还会影响导入对话框。如果停用此政策，就不会导入浏览历史记录。如果未设置此政策，系统就会询问用户是否导入浏览历史记录，或者系统自动进行导入。"
+ImportHomepage_Policy="首次运行时，从默认浏览器导入主页"
+ImportHomepage_Explain="如果启用此政策，就会强制从当前默认浏览器导入主页。如果停用此政策，就不会导入主页。如果未设置此政策，系统就会询问用户是否导入主页，或者系统自动进行导入。"
+ImportSavedPasswords_Policy="首次运行时，从默认浏览器导入保存的密码"
+ImportSavedPasswords_Explain="如果启用此政策，就会强制从先前的默认浏览器导入已保存的密码，还会影响导入对话框。如果停用此政策，就不会导入已保存的密码。如果未设置此政策，系统就会询问用户是否导入已保存的密码，或者系统自动进行导入。"
+ImportSearchEngine_Policy="首次运行时，从默认浏览器导入搜索引擎"
+ImportSearchEngine_Explain="如果启用此政策，就会强制从当前默认浏览器导入搜索引擎，还会影响导入对话框。如果停用此政策，就不会导入默认搜索引擎。如果未设置此政策，系统就会询问用户是否导入默认搜索引擎，或者系统自动进行导入。"
+IncognitoModeAvailability_Policy="隐身模式的可用情况。"
+IncognitoModeAvailability_Explain="指定用户是否可以在 Google Chrome中以隐身模式打开网页。如果选择“已启用”或未设置此政策，则允许以隐身模式打开网页。如果选择“已停用”，则不能以隐身模式打开网页。如果选择“强制”，则只能以隐身模式打开网页。"
+IncognitoModeAvailability_Part="隐身模式的可用情况。"
+Enabled_DropDown="可以使用隐身模式。"
+Disabled_DropDown="隐身模式已停用。"
+Forced_DropDown="强制使用隐身模式。"
+InstantEnabled_Policy="启用“即搜即得”"
+InstantEnabled_Explain="启用 Google Chrome的即搜即得功能，并禁止用户更改此设置。如果您启用了此设置，就会启用 Google Chrome即搜即得功能。如果您停用了此设置，就会停用 Google Chrome即搜即得功能。如果您启用或停用了此设置，用户就无法更改或替换此设置。如果未进行此设置，用户就可以决定是否使用此功能。"
+MaxConnectionsPerProxy_Policy="可同时连接到代理服务器的连接数上限"
+MaxConnectionsPerProxy_Explain="指定可同时连接到代理服务器的连接数上限。某些代理服务器无法处理同一客户端同时发出的大量连接，在此情况下，您只需将此策略设为较低的值即可解决此问题。此策略值应介于 6 和 100 之间，默认值为 32。某些网络应用程序采用了挂起 GET 的方式，这样会消耗大量连接，因此如果打开的此类网络应用程序过多，将该值设为小于 32 就可能会导致浏览器网络挂起。对于设置值小于默认值所产生的风险，您需要自行承担。如果未设置此政策，系统将使用默认值 32。"
+MaxConnectionsPerProxy_Part="可同时连接到代理服务器的连接数上限"
+MediaCacheSize_Policy="Set media disk cache size in bytes"
+MediaCacheSize_Explain="配置 Google Chrome用于在磁盘上存储缓存媒体文件的缓存大小。如果您设置了此政策，那么无论用户是否指定“--media-cache-size”标记，Google Chrome都会使用提供的缓存大小。如果此政策的值为 0，系统将使用默认缓存大小，但不允许用户更改大小。如果未设置此政策，系统将使用默认缓存大小，并允许用户通过“--media-cache-size”标记替换此大小。"
+MediaCacheSize_Part="设置媒体磁盘缓存大小"
+MetricsReportingEnabled_Policy="启用关于使用情况和崩溃相关数据的报告"
+MetricsReportingEnabled_Explain="允许向 Google 匿名报告有关 Google Chrome的使用情况和崩溃相关的数据，并禁止用户更改此设置。如果您启用了此设置，系统就会将使用情况和崩溃相关的数据匿名报告给 Google。如果您启用或停用了此设置，用户就无法在 Google Chrome中更改或替换此设置。如果未设置此政策，该设置将由用户在安装或首次运行时选择。"
+PrintingEnabled_Policy="启用打印功能"
+PrintingEnabled_Explain="在 Google Chrome中启用打印功能，并禁止用户更改此设置。如果已启用或未配置此设置，用户就可以进行打印。如果已停用此设置，用户就无法通过 Google Chrome进行打印。用户可通过扳手菜单、扩展程序、JavaScript 应用程序等停用打印功能。打印时，系统仍有可能通过绕过 Google Chrome的插件进行打印。例如某些 Flash 应用程序在自身的右键菜单中提供了打印选项，这些选项是不会停用的。如果未设置此政策，就会启用此设置，不过用户也可以更改此设置。"
+SafeBrowsingEnabled_Policy="启用安全浏览"
+SafeBrowsingEnabled_Explain="启用 Google Chrome的安全浏览功能，并禁止用户更改此设置。如果您启用了此设置，就会始终使用安全浏览功能。如果您停用了此设置，就永远不会使用安全浏览功能。如果您启用或停用了此设置，用户就无法在 Google Chrome中更改或替换此设置。如果未设置此政策，就会启用此设置，不过用户也可以更改此设置。"
+SavingBrowserHistoryDisabled_Policy="停用保存浏览器历史记录的功能"
+SavingBrowserHistoryDisabled_Explain="在 Google Chrome中停用浏览器历史记录保存功能，并禁止用户更改此设置。如果启用此设置，系统就不会保存浏览记录。如果停用或未配置此设置，系统就会保存浏览记录。"
+SearchSuggestEnabled_Policy="启用搜索建议"
+SearchSuggestEnabled_Explain="在 Google Chrome的多功能框中启用搜索建议功能，并禁止用户更改此设置。如果您启用了此设置，系统就会使用搜索建议功能。如果您停用了此设置，系统就不会使用搜索建议功能。如果您启用或停用了此设置，用户就无法在 Google Chrome中更改或替换此设置。如果未设置此政策，就会启用此设置，不过用户也可以更改此设置。"
+ShowHomeButton_Policy="在工具栏上显示“主页”按钮"
+ShowHomeButton_Explain="在 Google Chrome的工具栏上显示“主页”按钮。如果您启用了此设置，则会始终显示“主页”按钮。如果您停用了此设置，则从不显示“主页”按钮。如果您启用或停用了此设置，用户就无法在 Google Chrome中更改或替换此设置。如果未设置此政策，用户就可以选择是否显示“主页”按钮。"
+SyncDisabled_Policy="停用与 Google 同步数据的功能"
+SyncDisabled_Explain="使用 Google 托管的同步服务在 Google Chrome中停用数据同步功能，并禁止用户更改此设置。如果您启用了此设置，用户就无法在 Google Chrome中更改或替换此设置。如果未设置此政策，用户就可以选择是否使用 Google Sync。"
+TranslateEnabled_Policy="启用翻译"
+TranslateEnabled_Explain="在 Google Chrome中启用集成的 Google 翻译服务。如果您启用了此设置，Google Chrome将显示一个集成的工具栏，以便在合适的情况下帮助用户翻译网页。如果您停用了此设置，系统就不会显示翻译栏。如果您启用或停用了此设置，用户就无法在 Google Chrome中更改或替换此设置。如果未进行设置，用户就可以自行决定是否使用此功能。"
+URLBlacklist_Policy="阻止访问网址列表"
+URLBlacklist_Explain="阻止访问列出的网址。该政策禁止用户从列入黑名单的网址加载网页。网址格式为“scheme://host:port/path”。其中可选的 scheme 部分可以是 HTTP、HTTPS 或 FTP。只有指定的 scheme 会遭到阻止；如果未指定，则会阻止所有 scheme。host 部分可以是主机名，也可以是 IP 地址。主机名的子域也会遭到阻止。如果不想阻止子域，请在主机名前加上“.”。特殊的主机名“*”会阻止所有域。可选的 port 部分是介于 1 与 65535 之间的有效端口号。如果未指定，则会阻止所有端口。如果指定了可选的 path 部分，只会阻止带有相应前缀的路径。您可在网址白名单政策中定义例外。这些政策的条目上限为 100，超出的条目将被忽略。如果未设置此政策，浏览器就不会将任何网址列入黑名单。"
+URLBlacklist_Part="阻止访问网址列表"
+URLWhitelist_Policy="允许访问网址列表"
+URLWhitelist_Explain="允许访问列出的网址（黑名单中的网址除外）。有关此列表中条目的格式，请参见网址黑名单政策的说明。此政策可用于对限制性黑名单设置例外情况。例如，将“*”列入黑名单可阻止所有请求，而使用此政策可允许访问一系列有限的网址。此政策可用于对某些方案、其他域的子域、端口或特定路径设置例外情况。最具体的过滤条件将决定某个网址是否遭到阻止。白名单的优先级高于黑名单。此政策的条目上限为 100，超出的条目将被忽略。如果未设置此政策，来自“URLBlacklist”政策的黑名单就不存在任何例外情况。"
+URLWhitelist_Part="允许访问网址列表"
+UserDataDir_Policy="设置用户数据目录"
+UserDataDir_Explain="配置 Google Chrome将用于存储用户数据的目录。如果您设置了此政策，那么无论用户是否指定“--user-data-dir”标记，Google Chrome都会使用提供的目录。如果未设置此政策，系统将使用默认个人资料路径，并允许用户通过“--user-data-dir”命令行标记替换此路径。"
+UserDataDir_Part="设置用户数据目录"

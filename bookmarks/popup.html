@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>登录</title>
+	<meta charset="utf-8"/>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<style>
+        * {
+            margin:0px;
+            list-style:none;
+            font-size: 14px;
+            font-family:微软雅黑;
+        }
+
+        div {
+            margin:0px auto;
+            width:300px;
+        }
+
+        ul {
+            padding-top: 15px;
+            padding-left: 0px;
+        }
+
+            ul li {
+                line-height:20px;
+            }
+
+        #btn-login {
+            margin-top: 10px;
+            margin-left: 60px;
+            width: 30%;
+        }
+
+        #btn-quiet {
+            margin-top: 10px;
+            margin-left: 25px;
+            width: 30%;
+        }
+
+        #li-btn-login {
+            height:50px;
+        }
+
+        span {
+            margin-left: 60px;
+        }
+
+        .form-control-user {
+            display: block;
+            width: 60%;
+            height: 26px;
+            padding: 6px 12px;
+            font-size: 14px;
+            line-height: 1.42857143;
+            color: #555;
+            background-color: #fff;
+            background-image: none;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075);
+            box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075);
+            -webkit-transition: border-color ease-in-out .15s, -webkit-box-shadow ease-in-out .15s;
+            -o-transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+            transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+            margin-left: 60px;
+        }
+    </style>
+</head>
+<body>
+	  <div>
+        <ul>
+            <li><h6><span class="label label-Default">帐号</span></h6></li>
+            <li><input id="username" type="text" class="form-control-user" placeholder="登录帐号" required autofocus value="" /></li>
+            <li><h6><span class="label label-Default">密码</span></h6></li>
+            <li><input id="pwd" type="password" class="form-control-user" placeholder="登录密码" value="" /></li>
+            <li id="li-btn-login"><input type="button" id="btn-login" class="btn-login" value="登录"/><input type="button" id="btn-quiet" class="btn-login" value="退出"/></li>
+        </ul>
+    </div>
+	<script type="text/javascript" src="jquery-2.1.1.min.js"></script>
+	<script type="text/javascript" src="popup.js"></script>
+</body>
+</html>

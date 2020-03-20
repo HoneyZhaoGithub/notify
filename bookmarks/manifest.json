@@ -1,0 +1,82 @@
+{
+  "name": "获取招聘网简历信息",
+  "version": "1.0",
+  "manifest_version": 2,
+  "description": "vip客户专用",
+  "browser_action":
+   {
+    "default_icon": "img/icon.png",
+    "default_title": "Teamface",
+    "default_popup": "popup.html"
+  },
+  "icons":
+  {
+    "16": "img/icon.png",
+    "48": "img/icon.png",
+    "128": "img/icon.png"
+  },
+  "permissions": 
+  [
+    "webNavigation",
+  	"contextMenus", // 右键菜单
+    "tabs", // 标签
+    "notifications", // 通知
+    "webRequest", // web请求
+    "webRequestBlocking", // 阻塞式web请求
+    "storage", // 插件本地存储
+    "cookies",
+  	"http://*/*",
+  	"https://*/*" 
+  ],
+  "background":
+  {
+    "scripts": ["eventPage.js","jquery-2.1.1.min.js"]
+  },
+  "content_scripts": 
+  [
+    {
+      "matches": ["https://*.51job.com/*"],
+      "js": ["jquery-2.1.1.min.js", "contentscript.js"]
+    },
+    {
+      "matches": ["https://www.zhipin.com/*"],
+      "js": ["jquery-2.1.1.min.js", "contentscript-zp.js"]
+    },
+    {
+      "matches": ["https://*.lagou.com/*"],
+      "js": ["jquery-2.1.1.min.js", "contentscript-lg.js"]
+    },
+    {
+      "matches": ["http://ihr.zhaopin.com/*","https://ihr.zhaopin.com/*"],
+      "js": ["jquery-2.1.1.min.js", "contentscript-zl.js"]
+    },
+    {
+      "matches": ["https://rd5.zhaopin.com/*"],
+      "js": ["jquery-2.1.1.min.js", "contentscript-zl-rd.js"]
+    },
+    {
+      "matches": ["http://*.cjol.com/*"],
+      "js": ["jquery-2.1.1.min.js", "contentscript-rc.js"]
+    },
+    {
+      "matches": ["https://lpt.liepin.com/*"],
+      "js": ["jquery-2.1.1.min.js", "contentscript-lp.js"]
+    },
+    {
+      "matches": ["https://h.liepin.com/*"],
+      "js": ["jquery-2.1.1.min.js", "contentscript-lp-h.js"]
+    },
+    {
+      "matches": ["http://*.jxrcw.com/*"],
+      "js": ["jquery-2.1.1.min.js", "contentscript-jx.js"]
+    },
+    {
+      "matches": ["https://*.58.com/*"],
+      "js": ["jquery-2.1.1.min.js", "contentscript-58.js"]
+    },
+    {
+      "matches": ["file://*"],
+      "js": ["jquery-2.1.1.min.js", "contentscript-t.js"]
+    }
+  ]
+}
